@@ -86,9 +86,73 @@ Die Taylor-Entwicklungen sind
     \eexp{\ii x} &= \cos x + \ii\sin x.
 \end{align*}
 
-
 \section{Interferenz ebener Wellen}
 
+
 \section{Beugung am Einzelspalt}
+
+\subsection{Gangunterschied benachbarter Bündel}
+
+\begin{figure}[htbp]
+    \centering
+    \begin{tikzpicture}
+        \draw[thick,<->]
+        (0,0) -- node[left]{$\frac{d}{2N}$} (0,2)
+        ;
+        \draw[thick]
+        (.2,2) -- (2,2) -- (6,1)
+        (2,1) -- (6,0)
+        (.2,0) -- (2,0) -- (6,-1)
+        ;
+        \draw[dashed]
+        (2,2.5) node[above] {Einzelspalt} -- (2,-.5)
+        ;
+        \draw[dashdotted]
+        (2,2) -- (6,2)
+        (2,0) -- (intersection cs: first line={(2,0)--(3,4)}, second line={(2,2)--(6,1)})
+        ;
+        \draw[bend right]
+        (5,1.25) to (5.2,2)
+        (2.2,0.825) to (2,.9)
+        ;
+        \draw
+        (2.05,.8) -- (3,.6) node[below]{$\alpha$} -- (4,1.8)
+        ;
+        \node () at (2.2,1.75) {$\Delta$};
+    \end{tikzpicture}
+    \caption{%
+        Zwei benachbarte Bündel aus dem Lichtstrahl.
+    }
+    \label{fig:Einzelspalt}
+\end{figure}
+
+Der Gangunterschied $\Delta$ zwischen zwei benachbarten Bündeln ist, wie aus
+Abbildung~\ref{fig:Einzelspalt} ersichtlich $\Delta = \frac{d}{2N}\sin\alpha$.
+
+\subsection{Intensitätsminimum}
+
+Für ein Intensitätsminimum müssen die beiden äußeren Strahlen einen Gangunterschied von
+\begin{align*}
+    \Delta &= k\lambda,
+    \intertext{%
+        mit $k\in\mathbb{N}$ haben, dann gibt es immer zwei Strahlen mit Gangunterschied $\frac{\lambda}{2}$. Beugungsminima treten daher unter
+    }
+    \alpha &= \darcsin{\frac{2Nk\lambda}{d}}
+\end{align*}
+
+\subsection{Intensitätsmaximum}
+
+Für ein Intensitätsmaximum muss gelten
+\begin{align*}
+    \Delta &=  \del{k+\half}\lambda,
+    \intertext{%
+        mit $k\in\mathbb{N}$. Beugungsminima treten daher unter
+    }
+    \alpha &= \darcsin{\frac{\del{k+\half}2N\lambda}{d}}
+\end{align*}
+
+\subsection{Bedingung an Spaltbreite}
+
+Damit Beugungsmuster beobachtet werden können muss $d>\lambda$ gelten.
 
 \end{document}
