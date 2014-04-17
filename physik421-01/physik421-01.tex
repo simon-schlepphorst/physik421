@@ -67,6 +67,26 @@ Gegeben sind $z_1 = a_1 + \ii b_1$ und $z_2 = a_2 + \ii b_2$.
                   &= \sqrt{\del{a_1+a_2}^2 + \del{b_1+b_2}^2}
 \end{align*}
 
+\subsection{Eulersche Summe}
+
+Die Taylor-Entwicklungen sind
+\begin{align*}
+    \cos x &= \frac{x^0}{0!} - \frac{x^2}{2!} + \frac{x^4}{4!} + \dots \\
+           &= 1 - \frac{x^2}{2} + \frac{x^4}{24} + \dots\\
+    \sin x &= \frac{x^1}{1!} - \frac{x^3}{3!} + \frac{x^5}{5!} + \dots \\
+           &= x - \frac{x^3}{6} + \frac{x^5}{120} + \dots \\
+    \eexp{\ii x} &= \frac{\del{\ii x}^0}{0!} + \frac{\del{\ii x}^1}{1!} +
+    \frac{\del{\ii x}^2}{2!} + \frac{\del{\ii x}^3}{3!} + 
+    \frac{\del{\ii x}^4}{4!} +\frac{\del{\ii x}^5}{5!} + \dots \\
+    &= 1 + \ii x - \frac{x^2}{2} - \ii\frac{x^3}{6} + \frac{x^4}{24} +
+    \ii\frac{x^5}{120} + \dots.
+    \intertext{%
+        Man sieht sofort, dass gilt
+    }
+    \eexp{\ii x} &= \cos x + \ii\sin x.
+\end{align*}
+
+
 \section{Interferenz ebener Wellen}
 
 \section{Beugung am Einzelspalt}
