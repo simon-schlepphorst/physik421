@@ -5,7 +5,7 @@
 \renewcommand\thesection{\arabic{thezettel}.\arabic{section}}
 
 \title{physik421 - Übung \arabic{thezettel}}
-\author{Lino Lemmer \\ \small{l2@uni-bonn.de}}
+\author{Lino Lemmer \and Frederike Schrödel \\ \small{l2@uni-bonn.de}}
 
 \begin{document}
 \maketitle
@@ -87,6 +87,57 @@ Die Taylor-Entwicklungen sind
 \end{align*}
 
 \section{Interferenz ebener Wellen}
+
+Gegben sind zwei ebene Wellen der Form:
+\begin{align*}
+	\Psi_1=\vec{A}_1\ee^{\ii\del{\omega t-\vec{k}_1\vec{x}}}\\
+	\Psi_2=\vec{A}_2\ee^{\ii\del{\omega t-\vec{k}_2\vec{x}}}
+\end{align*}
+Es soll angenommen werden, diese seien kohärent.
+\subsection{Intensität}
+Es soll die Intensität $I$ der beiden Wellen berechnet werden:
+\begin{align*}
+	I&=\abs{\Psi_1+\Psi_2}^2\\
+	&=\abs{\vec{A}_1\ee^{\ii\del{\omega t-\vec{k}_1\vec{x}}}+\vec{A}_2\ee^{\ii\del{\omega t-\vec{k}_2\vec{x}}}}^2\\
+	&=\del{\vec{A}_1\ee^{\ii\del{\omega t-\vec{k}_1\vec{x}}}+\vec{A}_2\ee^{\ii\del{\omega t-\vec{k}_2\vec{x}}}}
+	\del{\vec{A}_1\ee^{-\ii\del{\omega t-\vec{k}_1\vec{x}}}+\vec{A}_2\ee^{-\ii\del{\omega t-\vec{k}_2\vec{x}}}}\\
+	&=\vec{A}_1^2+\vec{A}_2^2+\vec{A}_1\vec{A}_2\del{\ee^{\ii\vec{x}\del{\vec{k}_1-\vec{k}_2}}+\ee^{\ii\vec{x}\del{\vec{k}_2-\vec{k}_1}}}\\
+	&=\vec{A}_1^2+\vec{A}_2^2+\vec{A}_1\vec{A}_2\del{\ee^{\ii\vec{x}\del{\vec{k}_1-\vec{k}_2}}+\ee^{-\ii\vec{x}\del{\vec{k}_1-\vec{k}_2}}}\\
+	&=\vec{A}_1^2+\vec{A}_2^2+2\vec{A}_1\vec{A}_2\cos\del{\vec{x}\del{\vec{k}_1-\vec{k}_2}}\\
+\end{align*}
+
+\subsection{Inkohärente Intensität}
+Nun soll die Intensität betrachtet werden, wenn die beiden Wellen nicht kohärent sind. In diesem Fall gilt für die Intensität:
+\begin{align*}
+	I=\abs{\Psi_1^2+\Psi_2^2}
+\end{align*}
+
+\subsection{Minima und Maxima der Intensität}
+Jetzt soll errechnet werden, für welche $\vec{k}_j$ die Intensität minimal/maximal wird. Aufgrund der Cosinus-Abhängigkeit der Intensität ist diese minimal für
+\begin{align*}
+	\cos\del{\vec{x}\del{\vec{k}_1-\vec{k}_2}}=-1\iff\vec{x}\del{\vec{k}_1-\vec{k}_2}=\del{2n+1}\pi&& n\in \mathbb N
+\end{align*}
+und maximal für
+\begin{align*}
+	\cos\del{\vec{x}\del{\vec{k}_1-\vec{k}_2}}=1\iff\vec{x}\del{\vec{k}_1-\vec{k}_2}=2n\pi&& n\in\mathbb N
+\end{align*}
+Der demnach einfachste Fall für ein Maximum wäre bei $\vec{k}_1=\vec{k}_2$
+
+\subsection{Aufheben der beiden Wellen}
+
+Nun soll gezeigt werden unter welchen Bedingungen sich die beiden Wellen exakt aufheben würden. Aus 2.3 ist bekannt, dass das Minimum der Intensität erreicht wird, wenn $\vec{x}\del{\vec{k}_1-\vec{k}_2}=\del{2n+1}\pi$. In diesem Fall ist die Intensität:
+\begin{align*}
+	I=\vec{A}_1^2+\vec{A}_2^2-2\vec{A}_1\vec{A}_2
+\end{align*}
+Dabei heben sich die Wellen auf wenn $I=0$ ist:
+\begin{align*}
+	\vec{A}_1^2+\vec{A}_2^2-2\vec{A}_1\vec{A}_2=0
+\end{align*}
+Betrachtet man die Beträge $\abs{\vec{A}_1}$ und $\abs{\vec{A}_2}$ so folgt:
+\begin{align*}
+	\abs{\vec{A}_1}=\abs{\vec{A}_2}
+\end{align*}
+Die beiden Bedingungen dafür, dass sich die beiden Wellen aufheben sind also, dass die Intensität minimal wird und die Amplituden denselben Betrag haben.
 
 
 \section{Beugung am Einzelspalt}
