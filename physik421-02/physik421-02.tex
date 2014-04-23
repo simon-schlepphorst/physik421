@@ -19,6 +19,67 @@
 
 \subsection{Anschlussbedingungen}
 
+Die Schrödinger-Gleichung lautet
+\begin{align*}
+    \ii\hbar\dpd{}{t} \psi(q,t) &= \del{-\frac{\hbar^2}{2m}\dpd[2]{}{q} + V(q)} \psi(q,t),
+    \intertext{%
+        mit
+    }
+    V(q) &=
+    \begin{cases}
+        V_1 & ,-\infty<q<-q_0 \text{ (Bereich 1)}\\
+        0 & ,-q_0<q<+q_0 \text{ (Bereich 2)} \\
+        V_3 & ,+q_0<q<+\infty \text{ (Bereich 3)}
+    \end{cases}.
+    \intertext{%
+        Jetzt machen wir den Faktorisierungsansatz $\psi(q,t) = u(q)v(t)$:
+    }
+    \frac{\ii\hbar\dpd{v}{t}}{v(t)} &= \frac{-\frac{\hbar^2}{2m}\dpd[2]{u}{q}}{u(q)} + V(q) \overset{!}{=} E,
+    \intertext{%
+        wobei $E$ eine konstante ist. Für die zeitabhängige Lösung ergibt sich
+    }
+    v(t) &= \eexp{-\ii\frac{E}{\hbar}t}.
+    \intertext{%
+        Nun betrachten wir die ortsabhängige Funktion.
+    }
+    \frac{\hbar^2}{2m} \dpd[2]{u}{q} &= \del{V(q) - E} u(q) \\
+    \iff \qquad \dpd[2]{u}{q} &= \frac{2m}{\hbar^2}\del{V(q) - E}u
+    \intertext{%
+        Für Bereich 1 ergibt sich mit $\kappa_1^2=\frac{2m}{\hbar^2}\del{V_1 -E}$ die Differentialgleichung
+    }
+    \dpd[2]{u_1}{q} &= \kappa_1^2u_1,
+    \intertext{%
+        mit der Lösung
+    }
+    u_1(q) &= a_1\eexp{\kappa_1 q} + a_2\eexp{-\kappa_1 q}.
+    \intertext{%
+        Bereich 3 lässt sich mit $\kappa_3^2=\frac{2m}{\hbar^2}\del{V_3 -E}$ analog lösen. Wir erhalten
+    }
+    u_3(q) &= c_1\eexp{\kappa_3 q} + c_2\eexp{-\kappa_3 q}.
+    \intertext{%
+        Für Bereich 2 erhalten wir mit $k^2=\frac{2m}{\hbar^2}E$ die Differentialgleichung
+    }
+    \dpd[2]{u_2}{q} &= -k^2u_2,
+    \intertext{%
+        mit der Lösung
+    }
+    u_2(q) &= b_1\eexp{\ii kq} + b_2\eexp{-\ii kq}.
+    \intertext{%
+        Da sowohl die Funktion, als auch die Ableitung stetig sein muss erhalten wir die Randbedingungen
+    }
+    u_1\del{-q_0} &= u_2\del{-q_0} \\
+    u_1'\del{-q_0} &= u_2'\del{-q_0} \\
+    u_2\del{q_0} &= u_3\del{q_0} \\
+    u_2'\del{q_0} &= u_3'\del{q_0},
+    \intertext{%
+        oder ausgeschrieben
+    }
+    a_1\eexp{-\kappa_1 q_0} + a_2 \eexp{\kappa_1 q_0} &= b_1 \eexp{-\ii kq_0} + b_2 \eexp{\ii kq_0} \\
+    \kappa_1\del{a_1\eexp{-\kappa_1 q_0} - a_2\eexp{\kappa_1 q_0}} &= \ii k\del{ b_1 \eexp{-\ii kq_0} - b_2 \eexp{\ii kq_0}} \\
+    b_1 \eexp{\ii kq_0} + b_2 \eexp{-\ii kq_0} &= c_1\eexp{\kappa_3 q_0} + c_2 \eexp{-\kappa_3 q_0} \\
+    \ii k\del{ b_1 \eexp{\ii kq_0} - b_2 \eexp{-\ii kq_0}} &= \kappa_3\del{c_1\eexp{\kappa_3 q_0} - c_2\eexp{-\kappa_3 q_0}} \\
+\end{align*}
+
 \subsection{Eigenenergien und transzendente Gleichung}
 
 \subsection{Bestimmungsgleichung}
