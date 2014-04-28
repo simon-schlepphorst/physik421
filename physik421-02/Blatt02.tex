@@ -1,0 +1,98 @@
+%Autor: Jan Weber
+%
+\IfFileExists{header.tex}{\input{header.tex}}{\input{../header.tex}}
+
+\usepackage{makeidx}
+\makeindex
+
+\usepackage{tabularx}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}} % linksbündig mit Breitenangabe
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}} % zentriert mit Breitenangabe
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}} % rechtsbündig mit Breitenangabe
+
+\author{Jan Weber\\\small{s6jawebe@uni-bonn.de}\and Tobias Brauell\\\small{s6tobrau@uni-bonn.de}}
+\title{Theoretische Physik III}
+\subtitle{Übungsblatt 2}
+\usepackage{tikz}
+%\usepackage{tikz-3dplot}
+\usetikzlibrary{calc}
+\usetikzlibrary{decorations.markings}
+
+\usepackage{paralist}
+
+\usepackage{todonotes}
+\usepackage{listings}
+
+\usepackage{mathtools}
+
+\usepackage{cancel}
+
+\begin{document}
+\maketitle
+
+\section{Entartung von Energieniveaus}
+Zu zeigen ist, dass bei einer eindimensionalen, stationären Schrödingergleichung mit einem zeitunabhängigen Potential $V(x)$ kein Energieniveau des diskreten Spektrums entartet ist.
+\begin{align}
+  i\hbar\partial_t \psi(x,t)=\left(-\frac{\hbar^2}{2m}\Delta^2+V(x)\right)\psi(x,t)
+\end{align}
+Für zwei Wellenfunktionen gilt also:
+\begin{align}
+  H\psi_1&=E\psi_1		H\psi_2&&=E\psi_2		\\
+  E\psi_1&=\left(-\frac{\hbar^2}{2m}\nabla^2+V(x)\right)\psi_1		E\psi_2&&=\left(-\frac{\hbar^2}{2m}\nabla^2+V(x)\right)\psi_2	\\
+  E\psi_1\psi_2&=\left(\left(-\frac{\hbar^2}{2m}\nabla^2+V(x)\right)\psi_1\right)\psi_2		E\psi_2\psi_1&&=\left(\left(-\frac{\hbar^2}{2m}\nabla^2+V(x)\right)\psi_2\right)\psi_1
+\end{align}
+Beide Gleichungen werden nun gleich gesetzt und die Klammern aufgelöst:
+\begin{align}
+  \left(\left(-\frac{\hbar^2}{2m}\nabla^2+V(x)\right)\psi_1\right)\psi_2&=\left(\left(-\frac{\hbar^2}{2m}\nabla^2+V(x)\right)\psi_2\right)\psi_1	\\
+  \cancel{-\frac{\hbar^2}{2m}}\psi''_1\psi_2+\cancel{V(x)\psi_1\psi_2}&=\cancel{-\frac{\hbar^2}{2m}}\psi_1\psi''_2+\cancel{V(x)\psi_1\psi_2}
+\end{align}
+Das liefert also:
+\begin{align}
+  \psi''_1\psi_2 - \psi_1\psi''_2 = 0
+\end{align}
+Nun Intergrieren wir zwei mal partiell:
+\begin{align}
+  \int \left(\psi''_1\psi_2 - \psi_1\psi''_2\right) dx &= \psi'_1\psi_2 - \cancel{\int \left(\psi'_1\psi'_2\right)dx} - \psi_1\psi'_2 + \cancel{\int \left(\psi'_1\psi'_2\right)dx} + C \\
+  &= \psi'_1\psi_2 - \psi_1\psi'_2
+\end{align}
+
+\todo[inline]{Hier muss es noch weiter gehen.}
+
+
+
+\section{Delta-Potential}
+In dieser Aufgabe sollen Eigenwerte und normierte Eigenfunktionen eines $\delta$-Potentials $V(x)=-\alpha\delta(x)$ berechnet werden. Dabei sollen die Energien als negativ betrachtet werden. Es ergibt sich also die folgende Schrödingergleichung:
+\begin{align}
+  i\hbar\partial_t \psi(x,t)=\left(-\frac{\hbar^2}{2m}\nabla^2-\alpha\delta(x)\right)\psi(x,t)&=-E\psi(x,t)	\\
+  -\frac{\hbar^2}{2m}\psi''-\alpha\delta(x)\psi&=-E\psi
+\end{align}
+Für die Grenzbedingung bei $x=0$:
+\begin{align}
+  E \int^\epsilon_{-\epsilon}dx \psi &= \int^\epsilon_{-\epsilon}dx \frac{\hbar^2}{2m} \psi'' + \int^\epsilon_{-\epsilon}dx \alpha\delta(x)\psi		\\
+  &= \frac{\hbar^2}{2m}\left(\psi'(\epsilon)-\psi'(-\epsilon)\right)+\alpha\psi(0)
+\end{align}
+Nun wird der Grenzwert $\epsilon\rightarrow 0$ gebildet:
+\begin{align}
+  \lim\limits_{\epsilon \rightarrow 0} \left(\frac{\hbar^2}{2m}\left(\psi'(\epsilon)-\psi'(-\epsilon)\right)+\alpha\psi(0)\right)	\\
+  \Rightarrow \psi'(0^+)-\psi'(0^-)=-\frac{2m\alpha}{\hbar}\psi(0)
+\end{align}
+Damit die Grenzwerte $0^+$ und $0^-$ existieren muss die Wellengleichung $\psi$ an der Stelle $\psi(0)$ stetig sein.
+
+\todo[inline]{Hier muss es noch weiter gehen.}
+
+
+
+\section{Stückweise konstantes Potential}
+
+
+
+
+\section{Streuung am Potentialwall}
+
+
+
+
+
+
+
+\end{document}
