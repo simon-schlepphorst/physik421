@@ -5,8 +5,7 @@
 \renewcommand\thesection{\arabic{thezettel}.\arabic{section}}
 
 \title{physik421 - Übung \arabic{thezettel}}
-\author{Lino Lemmer \\ \small{l2@uni-bonn.de} \and Frederike Schrödel \and Simon Schlepphorst\\ 
- \small{s2@uni-bonn.de}}
+\author{Lino Lemmer \\ \small{l2@uni-bonn.de} \and Frederike Schrödel \and Simon Schlepphorst\\ \small{s2@uni-bonn.de}}
 
 \begin{document}
 \maketitle
@@ -90,10 +89,87 @@ Die Schrödinger-Gleichung lautet
 
 \section{Streuung am Potenzialwall}
 
+Stationäre Schrödingergleichung:
+\begin{align*}
+ \del{-\frac{\hbar^2}{2m} \dpd[2]{}{x} + V\del{x}} u\del{x} = E u\del{x}\\
+ \intertext{mit}
+ V\del{x} =
+ \begin{cases}
+  0 & \text{für } \abs{x} \geq \frac{a}{2}\\
+  V_0 & \text{für } \abs{x} < \frac{a}{2}
+ \end{cases}
+\end{align*}
+
+
 \subsection{Form der Wellenfunktion}
+Für das von $t$ unabhängige Potenzial $V\del{x}$ wird die gegebende Welle $\del{0 < E < V_0}$ faktorisiert in $\psi = \ee^{\ii\del{kx-\omega t}} = v\del{t}u\del{x}$.
+Des weiteren wird von dem Potenzial ein Teil reflektiert und ein Teil transmittiert.
+
+$\abs{x} \geq \frac{a}{2}$:
+\begin{align*}
+ &-\frac{\hbar^2}{2m} \dpd[2]{u\del{x}}{x} = E u\del{x}\\
+ \iff & \dpd[2]{u\del{x}}{x} = - \frac{2mE}{\hbar^2} u\del{x}\\
+ \implies &u\del{x} = \ee^{\ii kx} \quad \text{mit} \quad k = \sqrt{\frac{2mE}{\hbar^2}}
+\end{align*}
+$\abs{x} < \frac{a}2$:
+\begin{align*}
+ &-\frac{\hbar^2}{2m} \dpd[2]{u\del{x}}{x} + V_0 = E u\del{x}\\
+ \iff & \dpd[2]{u\del{x}}{x} = \frac{2m\del{V_0 - E}}{\hbar^2} u\del{x}\\
+ \implies &u\del{x} = \ee^{qx} \quad \text{mit} \quad q = \sqrt{\frac{2m\del{V_0-E}}{\hbar^2}}
+\end{align*}
+\begin{align*}
+ \implies \psi\del x = 
+ \begin{cases}
+  \ee^{\ii kx} + R\ee^{-\ii kx} & \text{für} \quad x \leq - \frac a2\\
+  A\ee^{qx} + B\ee^{qx} & \text{für} \quad -\frac a2 < x < \frac a2\\
+  T\ee^{\ii kx} & \text{für} \quad x \geq \frac a2
+ \end{cases}
+\end{align*}
 
 \subsection{Anschlussbedingungen}
 
+An den Übergangspunkten muss $\psi\del x$ stetig sein.
+\begin{align*}
+ \psi\del{-\frac a2}&: &\ee^{-\ii k a / 2} + R\ee^{\ii k a / 2} = A\ee^{-qa / 2} + B\ee^{qa / 2}\\
+ \psi'\del{-\frac a2}&: &\ii k \ee^{-\ii k a / 2} - \ii k R \ee^{\ii a / 2} = qA\ee^{-qa / 2} - qB\ee^{qa / 2}\\
+ \psi\del{\frac a2}&: & T\ee^{\ii ka/2} = A\ee^{q a/2} + B\ee^{-q a/2}\\
+ \psi'\del{\frac a2}&: & \ii kT\ee^{\ii ka/2} = qA\ee^{q a/2} - q B\ee^{-q a/2}
+\end{align*}
+
+\begin{align*}
+ \implies
+ \begin{pmatrix}
+  \del{1 - \ii \frac qk}\ee^{-qa/2} & \del{1 + \ii\frac qk}\ee^{qa/2}\\
+  \del{1 + \ii \frac qk}\ee^{qa/2} & \del{1 - \ii\frac qk}\ee^{-qa/2}
+ \end{pmatrix}
+ \begin{pmatrix}
+  A\\
+  B
+ \end{pmatrix}
+ =
+ \begin{pmatrix}
+  2\ee^{-\ii k a /2}\\
+  0
+ \end{pmatrix}
+\end{align*}
+Definiere:
+\begin{align*}
+ &\alpha \equiv \del{1 - \ii \frac qk}\ee^{-qa/2} &&\beta \equiv \del{1 + \ii\frac qk}\ee^{qa/2} &&\gamma \equiv   2\ee^{-\ii k a /2}
+\end{align*}
+\begin{align*}
+ \implies &A = \frac{\alpha \gamma}{\alpha^2 - \beta^2} &&B = -\frac{\beta \gamma}{\alpha^2 - \beta^2}
+\end{align*}
+Das noch auszurechnen wird unnötig hässlich.
+
+
+
 \subsection{Reflexions- und Transmissionskoeffizient}
+
+Aus den Anschlussbedingungen folgt:
+\begin{align*}
+ R = \frac{A\ee^{-qa/2} + B\ee^{qa/2} - \ee^{-\ii ka/2}}{\ee^{\ii ka/2}}\\
+ T = \frac{A\ee^{qa/2} + B\ee^{-qa/2}}{\ee^{\ii ka/2}}
+\end{align*}
+
 
 \end{document}
