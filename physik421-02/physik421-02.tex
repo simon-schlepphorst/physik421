@@ -132,6 +132,44 @@ Die Schrödinger-Gleichung lautet
 
 \subsection{Eigenenergien und transzendente Gleichung}
 
+In den Randbedingungen muss der Faktor $a_2$ verschwinden, damit die
+Wellenfunktion normierbar ist, ebenso der Faktor $c_1$. Wenn wir die zweite
+Randbedingung durch $\kappa_1$ teilen und von der ersten subtrahieren erhalten
+wir
+\begin{align*}
+    && 0 &= \frac{\ii k - \kappa_1}{\kappa_1}b_1\eexp{-\ii kq_0} - \frac{\ii k + \kappa_1}{\kappa_1}b_2\eexp{\ii kq_0}.
+    \intertext{%
+        Nach einem kleinen Bisschen Umformen erhalten wir daraus
+    }
+    && \frac{b_1}{b_2} &= \frac{\ii k + \kappa_1}{\ii k - \kappa_1}\eexp{2\ii kq_0}.
+    \intertext{%
+        Teilen wir die vierte Randbedingung durch $\kappa_3$ und addieren das Ergebnis zur Dritten, ergibt sich
+    }
+    && 0 &= \frac{\ii k + \kappa_3}{\kappa_3}b_1\eexp{\ii kq_0} - \frac{\ii k - \kappa_3}{\kappa_3}b_2\eexp{-\ii kq_0},
+    \intertext{%
+        aus dem man durch Umstellen
+    }
+    && \frac{b_1}{b_2} &= \frac{\ii k - \kappa_3}{\ii k + \kappa_3} \eexp{-2\ii kq_0}
+    \intertext{%
+        erhält. Nun setzen wir beide Ausdrücke für $\frac{b_1}{b_2}$ gleich:
+    }
+    && \frac{\ii k - \kappa_3}{\ii k + \kappa_3} \eexp{-2\ii kq_0} &= \frac{\ii k + \kappa_1}{\ii k - \kappa_1}\eexp{2\ii kq_0} \\
+    &\iff & 1 &= \eexp{-4\ii kq_0}\frac{\del{\ii k - \kappa_1}\del{\ii k - \kappa_3}}{\del{\ii k + \kappa_3}\del{\ii k + \kappa_1}}
+    \intertext{%
+        Erweitern wir nun mit den komplex Konjugierten der ersten Klammer im Zähler und im Nenner, erhalten wir
+    }
+    && 1 &= \eexp{-4\ii kq_0}\frac{\del{\ii k - \kappa_1}\del{\ii k + \kappa_1}\del{\ii k - \kappa_3}^2}{\del{\ii k + \kappa_3}\del{\ii k - \kappa_3}\del{\ii k + \kappa_1}^2}.
+    \intertext{%
+        Die Multiplikation einer komplexen Zahl mit ihrer komplex Konjugierten ergibt ihr Betragsquadrat:
+    }
+    && 1 &= \eexp{-4\ii kq_0}\frac{\del{k^2 + \kappa_1^2}}{\del{k^2 + \kappa_3^2}}\frac{\del{\ii k - \kappa_3}^2}{\del{\ii k + \kappa_1}^2}
+    \intertext{%
+        Da nun gilt $V_i = \frac{\hbar^2\del{k^2+\kappa_i^2}}{2m}$, erhalten wir die Beziehung
+    }
+    && 1 &= \eexp{-4\ii kq_0}\frac{V_1}{V_3}\frac{\del{\ii k - \kappa_3}^2}{\del{\ii k + \kappa_1}^2}.
+\end{align*}
+Diese sieht der vorgegebenen transzendenten Gleichung immerhin ziemlich ähnlich.
+
 \subsection{Bestimmungsgleichung}
 
 \subsection{Diskretes Eigenwertspektrum}
