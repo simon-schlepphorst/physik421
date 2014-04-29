@@ -4,6 +4,7 @@
 \setcounter{thezettel}{2}
 \renewcommand\thesection{\arabic{thezettel}.\arabic{section}}
 
+
 \title{physik421 - Übung \arabic{thezettel}}
 \author{Lino Lemmer \\ \small{l2@uni-bonn.de} \and Frederike Schrödel \and Simon Schlepphorst\\ \small{s2@uni-bonn.de}}
 
@@ -12,7 +13,57 @@
 
 \section{Entartung von Energieniveaus}
 
+Zu zeigen ist, dass bei einer eindimensionalen, stationären Schrödingergleichung mit einem zeitunabhängigen Potential $V(x)$ kein Energieniveau des diskreten Spektrums entartet ist.
+\[
+    \left(-\frac{\hbar^2}{2m}\dpd[2]{}{x}+V(x)\right)\psi(x,t) = E\psi(x,t)
+\]
+Für zwei Wellenfunktionen gilt also:
+
+\begin{align*}
+    H\psi_1&=E\psi_1	&	H\psi_2&=E\psi_2		\\
+    E\psi_1&=\left(-\frac{\hbar^2}{2m}\dpd[2]{}{x}+V(x)\right)\psi_1	&
+    E\psi_2&=\left(-\frac{\hbar^2}{2m}\dpd[2]{}{x}+V(x)\right)\psi_2	\\
+    E\psi_1\psi_2&=\left(\left(-\frac{\hbar^2}{2m}\dpd[2]{}{x} +
+    V(x)\right)\psi_1\right)\psi_2
+    &
+    E\psi_2\psi_1&=\left(\left(-\frac{\hbar^2}{2m}\dpd[2]{}{x} +
+    V(x)\right)\psi_2\right)\psi_1
+\end{align*}
+
+Beide Gleichungen werden nun gleich gesetzt und die Klammern aufgelöst:
+\begin{align*}
+    \left(\left(-\frac{\hbar^2}{2m}\dpd[2]{}{x} + V(x)\right)\psi_1\right)\psi_2 &= \left(\left(-\frac{\hbar^2}{2m}\dpd[2]{}{x} + V(x)\right)\psi_2\right)\psi_1	\\
+  \cancel{-\frac{\hbar^2}{2m}}\psi''_1\psi_2+\cancel{V(x)\psi_1\psi_2} &= \cancel{-\frac{\hbar^2}{2m}}\psi_1\psi''_2+\cancel{V(x)\psi_1\psi_2}
+    \intertext{%
+        Das liefert also:
+    }
+    \psi''_1\psi_2 - \psi_1\psi''_2 &= 0
+  \intertext{%
+      Nun Intergrieren wir zwei mal partiell:
+  }
+  \int\!\dif x \, \psi_1''\psi_2 - \psi_1\psi''_2 &= \psi'_1\psi_2 - \cancel{\int \!\dif x \, \psi'_1\psi'_2} - \psi_1\psi'_2 + \cancel{\int \!\dif x \,\psi'_1\psi'_2} + C \\
+  &= \psi'_1\psi_2 - \psi_1\psi'_2
+\end{align*}
+
+
 \section{$\delta$-Potenzial}
+
+In dieser Aufgabe sollen Eigenwerte und normierte Eigenfunktionen eines $\delta$-Potentials $V(x)=-\alpha\delta(x)$ berechnet werden. Dabei sollen die Energien als negativ betrachtet werden. Es ergibt sich also die folgende Schrödingergleichung:
+\begin{align*}
+  \left(-\frac{\hbar^2}{2m}\dpd[2]{}{x}-\alpha\delta(x)\right)\psi(x,t)&=-E\psi(x,t)	\\
+  -\frac{\hbar^2}{2m}\psi''-\alpha\delta(x)\psi&=-E\psi
+    \intertext{%
+        Für die Grenzbedingung bei $x=0$:
+    }
+  E \int^\epsilon_{-\epsilon}\!\dif x\, \psi &= \int^\epsilon_{-\epsilon}\!\dif x\, \frac{\hbar^2}{2m} \psi'' + \int^\epsilon_{-\epsilon}\!\dif x\, \alpha\delta(x)\psi		\\
+  &= \frac{\hbar^2}{2m}\left(\psi'(\epsilon)-\psi'(-\epsilon)\right)+\alpha\psi(0)
+    \intertext{%
+        Nun wird der Grenzwert $\epsilon\rightarrow 0$ gebildet:
+    }
+  \lim\limits_{\epsilon \to 0} \left(\frac{\hbar^2}{2m}\left(\psi'(\epsilon)-\psi'(-\epsilon)\right)+\alpha\psi(0)\right)	\\
+  \implies \psi'(0^+)-\psi'(0^-)&=-\frac{2m\alpha}{\hbar}\psi(0)
+\end{align*}
+Damit die Grenzwerte $0^+$ und $0^-$ existieren müssen die Wellengleichung $\psi$ und ihre Ableitung an der Stelle $x=0$ stetig sein.
 
 \section{Stückweise konstantes Potenzial}
 
