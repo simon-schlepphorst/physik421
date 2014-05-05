@@ -15,20 +15,38 @@
 
 \subsection{Abbildung von Ableitungsoperator auf Multiplikation}
 \begin{align*}
- F\cbr{\phi}\del{\vec k} &= \frac{1}{\del{2\pi}^{\frac{n}2}} \int^\infty_{-\infty} \dif^{\,n} x \phi\del{\vec x}\ee^{-\ii \vec k \vec x}\\
- F\cbr{\dpd{}{x_\alpha} f\del x}\del{\vec k} &= \frac1{\del{2\pi}^{\frac{n}{2}}} \int_{-\infty}^\infty \dif^{\,n} x \underbrace{\dpd{}{x_\alpha} f\del{\vec x}}_{u'}
+ \mathcal{F}\cbr{\phi}\del{\vec k} &= \frac{1}{\del{2\pi}^{\frac{n}2}} \int^\infty_{-\infty} \dif^{\,n} x \phi\del{\vec x}\ee^{-\ii \vec k \vec x}\\
+ \mathcal{F}\cbr{\dpd{}{x_\alpha} f\del x}\del{\vec k} &= \frac1{\del{2\pi}^{\frac{n}{2}}} \int_{-\infty}^\infty \dif^{\,n} x \underbrace{\dpd{}{x_\alpha} f\del{\vec x}}_{u'}
  \underbrace{\ee^{-\ii \vec k \vec x}}_{v}\\
  &= \frac1{\del{2\pi}^{\frac{n}2}} \del{ \sbr{f\del{\vec x}\ee^{-\ii\vec k\vec x}}^\infty_{-\infty}
  + \int_{-\infty}^{\infty} \dif^{\,n} x f\del{\vec x}\del{\ii k_\alpha}\ee^{-\ii \vec k \vec x}}
  \intertext{Damit $f\del{\vec x}$ quadratintegrabel ist, muss $f\del{\pm \infty} \to 0$ gehen}
- \implies &\underbrace{\ii k}_{\dpd{}{x_\alpha}} F\cbr{f\del{\vec x}}\del{\vec k}\\
- \implies &F\cbr{\dpd{}{x_\alpha}}\del{\vec k} = \ii k_\alpha\\
- \intertext{Herleitung für $F\cbr{\dpd{}{k_\alpha}}\del{\vec x}$ funktioniert analog. Nur mit $\ldots \int_{-\infty}^\infty \ldots \ee^{+\ii \vec k \vec x}$}
- \implies &F\cbr{\dpd{}{k_\alpha}}\del{\vec x} = - \ii k_\alpha
+ \implies &\underbrace{\ii k}_{\dpd{}{x_\alpha}} \mathcal{F}\cbr{f\del{\vec x}}\del{\vec k}\\
+ \implies &\mathcal{F}\cbr{\dpd{}{x_\alpha}}\del{\vec k} = \ii k_\alpha\\
+ \intertext{Herleitung für $\mathcal{F}\cbr{\dpd{}{k_\alpha}}\del{\vec x}$ funktioniert analog. Nur mit $\ldots \int_{-\infty}^\infty \ldots \ee^{+\ii \vec k \vec x}$}
+ \implies &\mathcal{F}\cbr{\dpd{}{k_\alpha}}\del{\vec x} = - \ii k_\alpha
 \end{align*}
 
 
 \subsection{}
+\begin{align*}
+ \mathcal{F}\cbr{\phi}\del{k} &= \underbrace{\frac1{\sqrt{2\pi}}}_{a} \int_{-\infty}{\infty} \dif t \phi\del{t} \ee^{-\ii \omega t}\\
+  &= a \int_{-\infty}^\infty \dif t \del{\phi_e\del{t} + \phi_o\del{t}} \cos\del{\omega t}
+  - \ii a \int_{-\infty}^\infty \dif t \del{\phi_e\del{t} + \phi_o\del{t}} \sin\del{\omega t}
+  \intertext{mit $\phi\del{t} = \phi_e\del{t} + \phi_o\del{t}$ und $\ee^{-\ii x} = \cos\del{x} - \ii \sin \del{x}$}
+\end{align*}
+Für Integrale über gerade bzw. ungerade Funktionen gilt:
+\begin{align*}
+ &\int_{-\infty}^\infty \underbrace{f\del{x}}_{\text{odd}} \underbrace{g\del x}_{\text{even}} = 0
+ \quad \quad \text{mit}
+ \begin{cases}
+  \cos\del x : \text{even} & \cos\del x = \cos\del{-x}\\
+  \sin\del x: \text{odd} & \sin\del x = - \sin\del{-x}
+ \end{cases}\\
+ \implies &\underbrace{a \int_{-\infty}^\infty \dif t \phi_e\del t \cos \del{\omega t}}_{\Re \del{\phi\del t}}
+ \underbrace{- \ii a \int_{-\infty}^\infty \dif t \phi_o\del t \sin\del{\omega t}}_{- \ii \Im\del{\phi\del t}}
+\end{align*}
+
 
 \subsection{Abbildung von Produkt auf Faltung}
 
