@@ -14,6 +14,19 @@
 \section{Fouriertransformation}
 
 \subsection{Abbildung von Ableitungsoperator auf Multiplikation}
+\begin{align*}
+ F\cbr{\phi}\del{\vec k} &= \frac{1}{\del{2\pi}^{\frac{n}2}} \int^\infty_{-\infty} \dif^{\,n} x \phi\del{\vec x}\ee^{-\ii \vec k \vec x}\\
+ F\cbr{\dpd{}{x_\alpha} f\del x}\del{\vec k} &= \frac1{\del{2\pi}^{\frac{n}{2}}} \int_{-\infty}^\infty \dif^{\,n} x \underbrace{\dpd{}{x_\alpha} f\del{\vec x}}_{u'}
+ \underbrace{\ee^{-\ii \vec k \vec x}}_{v}\\
+ &= \frac1{\del{2\pi}^{\frac{n}2}} \del{ \sbr{f\del{\vec x}\ee^{-\ii\vec k\vec x}}^\infty_{-\infty}
+ + \int_{-\infty}^{\infty} \dif^{\,n} x f\del{\vec x}\del{\ii k_\alpha}\ee^{-\ii \vec k \vec x}}
+ \intertext{Damit $f\del{\vec x}$ quadratintegrabel ist, muss $f\del{\pm \infty} \to 0$ gehen}
+ \implies &\underbrace{\ii k}_{\dpd{}{x_\alpha}} F\cbr{f\del{\vec x}}\del{\vec k}\\
+ \implies &F\cbr{\dpd{}{x_\alpha}}\del{\vec k} = \ii k_\alpha\\
+ \intertext{Herleitung für $F\cbr{\dpd{}{k_\alpha}}\del{\vec x}$ funktioniert analog. Nur mit $\ldots \int_{-\infty}^\infty \ldots \ee^{+\ii \vec k \vec x}$}
+ \implies &F\cbr{\dpd{}{k_\alpha}}\del{\vec x} = - \ii k_\alpha
+\end{align*}
+
 
 \subsection{}
 
