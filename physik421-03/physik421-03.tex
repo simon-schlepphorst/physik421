@@ -49,8 +49,27 @@ Für Integrale über gerade bzw. ungerade Funktionen gilt:
 
 
 \subsection{Abbildung von Produkt auf Faltung}
+Für eine Faltung gilt:
+\[
+  (\phi_1 * \phi_2)(x) =  \int^\infty_{-\infty}\dif^n y \phi_1(x-y)\phi_2(y)
+\]
+
+Und für $n=1$ ergibt sich somit:
+\begin{align}
+  \sqrt{2\pi} \mathcal{F}\{\phi_1 \cdot \phi_2\} (k) &= \int^\infty_{-\infty}\dif x \phi_1(x)\phi_2(x) \ee^{-ikx}	\\
+  &= \int^\infty_{-\infty}\dif x \int^\infty_{-\infty}\dif y \phi_1(x-y)\phi_2(y) \ee^{-ik(x-y)} \ee^{-iky}	\\
+  &= \left(\mathcal{F}\{\phi_1\}*\mathcal{F}\{\phi_1\}\right) (k)
+\end{align}
+
 
 \subsection{Vertauschbarkeit von Ableitung und Faltung}
+Da die Ableitung unabhängig von den Variablen des Integrals ist, lässt sie sich in das Integral ziehen:
+\begin{align}
+  \frac{\partial}{\partial x_\alpha} \left((\phi_1 * \phi_2)(x)\right) &= \frac{\partial}{\partial x_\alpha} \left(\int^\infty_{-\infty}\dif^n y \phi_1(x-y)\phi_2(y)\right)	\\
+  &= \int^\infty_{-\infty}\dif^n y \left(\frac{\partial}{\partial x_\alpha} \phi_1(x-y)\right)\phi_2(y)	\\
+  &= \left(\partial_\alpha \phi_1 * \phi_2\right)(x)
+\end{align}
+
 
 \section{Gaußintegrale}
 Für diese Aufgabe ist eine Wahrscheinlichkeitsdichte von 
