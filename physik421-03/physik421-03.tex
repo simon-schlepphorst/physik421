@@ -14,8 +14,39 @@
 \section{Fouriertransformation}
 
 \subsection{Abbildung von Ableitungsoperator auf Multiplikation}
+\begin{align*}
+ \mathcal{F}\cbr{\phi}\del{\vec k} &= \frac{1}{\del{2\pi}^{\frac{n}2}} \int^\infty_{-\infty} \dif^{\,n} x \phi\del{\vec x}\ee^{-\ii \vec k \vec x}\\
+ \mathcal{F}\cbr{\dpd{}{x_\alpha} f\del x}\del{\vec k} &= \frac1{\del{2\pi}^{\frac{n}{2}}} \int_{-\infty}^\infty \dif^{\,n} x \underbrace{\dpd{}{x_\alpha} f\del{\vec x}}_{u'}
+ \underbrace{\ee^{-\ii \vec k \vec x}}_{v}\\
+ &= \frac1{\del{2\pi}^{\frac{n}2}} \del{ \sbr{f\del{\vec x}\ee^{-\ii\vec k\vec x}}^\infty_{-\infty}
+ + \int_{-\infty}^{\infty} \dif^{\,n} x f\del{\vec x}\del{\ii k_\alpha}\ee^{-\ii \vec k \vec x}}
+ \intertext{Damit $f\del{\vec x}$ quadratintegrabel ist, muss $f\del{\pm \infty} \to 0$ gehen}
+ \implies &\underbrace{\ii k}_{\dpd{}{x_\alpha}} \mathcal{F}\cbr{f\del{\vec x}}\del{\vec k}\\
+ \implies &\mathcal{F}\cbr{\dpd{}{x_\alpha}}\del{\vec k} = \ii k_\alpha\\
+ \intertext{Herleitung für $\mathcal{F}\cbr{\dpd{}{k_\alpha}}\del{\vec x}$ funktioniert analog. Nur mit $\ldots \int_{-\infty}^\infty \ldots \ee^{+\ii \vec k \vec x}$}
+ \implies &\mathcal{F}\cbr{\dpd{}{k_\alpha}}\del{\vec x} = - \ii k_\alpha
+\end{align*}
+
 
 \subsection{}
+\begin{align*}
+ \mathcal{F}\cbr{\phi}\del{k} &= \underbrace{\frac1{\sqrt{2\pi}}}_{a} \int_{-\infty}{\infty} \dif t \phi\del{t} \ee^{-\ii \omega t}\\
+  &= a \int_{-\infty}^\infty \dif t \del{\phi_e\del{t} + \phi_o\del{t}} \cos\del{\omega t}
+  - \ii a \int_{-\infty}^\infty \dif t \del{\phi_e\del{t} + \phi_o\del{t}} \sin\del{\omega t}
+  \intertext{mit $\phi\del{t} = \phi_e\del{t} + \phi_o\del{t}$ und $\ee^{-\ii x} = \cos\del{x} - \ii \sin \del{x}$}
+\end{align*}
+Für Integrale über gerade bzw. ungerade Funktionen gilt:
+\begin{align*}
+ &\int_{-\infty}^\infty \underbrace{f\del{x}}_{\text{odd}} \underbrace{g\del x}_{\text{even}} = 0
+ \quad \quad \text{mit}
+ \begin{cases}
+  \cos\del x : \text{even} & \cos\del x = \cos\del{-x}\\
+  \sin\del x: \text{odd} & \sin\del x = - \sin\del{-x}
+ \end{cases}\\
+ \implies &\underbrace{a \int_{-\infty}^\infty \dif t \phi_e\del t \cos \del{\omega t}}_{\Re \del{\phi\del t}}
+ \underbrace{- \ii a \int_{-\infty}^\infty \dif t \phi_o\del t \sin\del{\omega t}}_{- \ii \Im\del{\phi\del t}}
+\end{align*}
+
 
 \subsection{Abbildung von Produkt auf Faltung}
 Für eine Faltung gilt:
@@ -111,11 +142,19 @@ und die, wiederum durch Fouriertransformation, rücktransformierte Wellengleichu
 \subsection{Impulsverteilung}
 % \subsection{Skizze im Impulsraum}
 Nun soll zuerst das im Impulsraum gegebene Wellenpacket $\phi\del{k,0}$ skizziert werden. Dies habe ich, unter Verwendung von GNU-Plot, für verschiedene $k_0$, $d$ und $A$, in Abbildung 1 realisiert. Diese zeigt, dass $A$ die Position des Maximums, $d$ die Breite und $k_0$ die Position des Wellenpackets festlegen. Dabei wurde natürlich vernachlässigt, dass $A$ noch nicht genormt worden ist.
+<<<<<<< HEAD
 % \begin{figure}[ht]
 % 	\centering
 % 	\includegraphics[scale=1.3]{Skizze_zu_3_1.pdf}
 % 	\caption{Wellenpacket $\phi\del{k,0}$ im Impulsraum für verschiedene $k_0$, $d$ und $A$}
 % \end{figure}
+=======
+\begin{figure}[ht]
+	\centering
+	\includegraphics[scale=1.3]{Skizze_zu_3_1.pdf}
+	\caption{Wellenpacket $\phi\del{k,0}$ im Impulsraum für verschiedene $k_0$, $d$ und $A$}
+\end{figure}
+>>>>>>> simon/master
 
 \subsection{Wahrscheinlichkeitsdichte}
 % \subsection{Ausführen der Fouriertransformation und Dichte}
