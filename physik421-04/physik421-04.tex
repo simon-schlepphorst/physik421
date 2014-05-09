@@ -13,6 +13,38 @@
 
 \section{Hermitesche Polynome}
 
+Die Hermitischen Polynome haben die Integraldarstellung
+\[
+    H_n(x) = \frac1{\sqrt\piup}2^n\int_{-\infty}^\infty\!\dif y\, (x + \ii y)^n \eexp{-y^2}
+\]
+
+\subsection{Erste drei Polynome}
+
+Mit der Integraldarstellung sollen die ersten drei Polynome berechnet werden.
+\begin{align*}
+    H_0(x) &= \frac1{\sqrt\piup} 2^0 \int_{-\infty}^\infty\!\dif y\, (x + \ii y)^0 \eexp{-y^2} \\
+           &= \frac1{\sqrt\piup} \int_{-\infty}^\infty\!\dif y\, \eexp{-y^2} \\
+           &= \frac1{\sqrt\piup} \sqrt\piup \\
+           &= 1 \\
+    H_1(x) &= \frac1{\sqrt\piup} 2^1 \int_{-\infty}^\infty\!\dif y\, (x + \ii y)^1 \eexp{-y^2} \\
+           &= \frac{2}{\sqrt\piup}\del{x\int_{-\infty}^\infty\!\dif y\, \eexp{-y^2} + \ii\int_{-\infty}^\infty\!\dif y\,\underbrace{y}_{\text{unger.}} \underbrace{\eexp{-y^2}}_{\text{ger.}}} \\
+           &= \frac{2x}{\sqrt\piup}\sqrt\piup + 0 \\
+           &= 2x \\
+    H_2(x) &= \frac1{\sqrt\piup} 2^2 \int_{-\infty}^\infty\!\dif y\, (x + \ii y)^2 \eexp{-y^2} \\
+           &= \frac4{\sqrt\piup} \del{x^2\int_{-\infty}^\infty\!\dif y\, \eexp{-y^2} + \underbrace{2\ii x \int_{-\infty}^\infty\!\dif y\,y\eexp{-y^2}}_{=0} - \int_{-\infty}^\infty\!\dif y\, y^2\eexp{-y^2}}
+    \intertext{%
+        Hier wenden wir einen kleinen Trick an. Wir benutzen, dass
+    $
+    y^2\eexp{-y^2} = \left.-\dod{}{c}\eexp{-cy^2}\right|_{c=1}
+    $
+        gilt. Da diese Funktion stetig und genügend häufig differenzierbar ist, können wir Ableitung und Integration vertauschen:
+    }
+    &= 4x^2 + \frac4{\sqrt\piup}\left.\dod{}{c}\int_{-\infty}^\infty\!\dif y\, \eexp{-cy^2}\right|_{c=1} \\
+    &= 4x^2 + \frac4{\sqrt\piup}\left.\dod{}{c}\sqrt{\frac\piup c}\right|_{c=1} \\
+    &= 4x^2 - 4\cdot\left.\frac1{2\sqrt{c}^3}\right|_{c=1} \\
+    &= 4x^2 - 2
+\end{align*}
+
 
 \section{Eigenzustände des harmonischen Oszillators}
 
