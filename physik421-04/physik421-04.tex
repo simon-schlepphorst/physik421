@@ -45,6 +45,27 @@ Mit der Integraldarstellung sollen die ersten drei Polynome berechnet werden.
     &= 4x^2 - 2
 \end{align*}
 
+\subsection{Erzeugende Funktion}
+
+Zu zeigen ist, dass 
+\[
+    \sum_{n=0}^\infty \frac{t^n}{n!}H_n(x) = \dexp{2tx -t^2}
+\]
+gilt.
+\begin{align*}
+    \sum_{n=0}^\infty \frac{t^n}{n!}H_n(x) &=
+    \frac1{\sqrt\pi}\int_{-\infty}^{\infty}\!\dif y\, \sum_{n=0}^\infty
+    \frac{(2t)^n}{n!} (x - \ii y)^n \dexp{-y^2} \\
+    &= \frac1{\sqrt\pi}\int_{-\infty}^{\infty}\!\dif y\, \dexp{2tx - 2t\ii y - y^2} \\
+    &= \frac1{\sqrt\pi}\int_{-\infty}^{\infty}\!\dif y\, \dexp{2tx -t^2 + t^2 - 2t\ii y - y^2} \\
+    &= \frac1{\sqrt\pi}\int_{-\infty}^{\infty}\!\dif y\, \dexp{2tx -t^2 - (\ii t+y)^2} \\
+    &= \frac{\dexp{2tx -t^2}}{\sqrt\pi}\int_{-\infty}^{\infty}\!\dif y\, \dexp{-(\ii t+y)^2} 
+    \intertext{%
+        Mit $z = \ii t + y$ und $\dif z = \dif y$ erhalten wir
+    }
+    &= \frac{\dexp{2tx -t^2}}{\sqrt\pi} \int_{-\infty}^{\infty}\!\dif z\, \dexp{-z^2} \\
+    &= \dexp{2tx -t^2}.
+\end{align*}
 
 \section{Eigenzustände des harmonischen Oszillators}
 
