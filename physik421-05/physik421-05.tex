@@ -15,23 +15,23 @@
 \subsection{}
 Es soll gezeigt werden, dass die Spur unabhängig von der Basis ist.
 \begin{align*}
-    \text{Sp}(\hat A) &= \sum_i \langle e_i, \hat Ae_i \rangle \qquad|\text{ mit } \hat A=\hat A_1\hat A_2
-                      &= \sum_i \langle e_i, \hat A_1\hat A_2e_i \rangle \\
-                      &= \sum_i \langle \hat A_1*e_i, \hat A_2e_i \rangle \\
-                      &= \sum_{i,j}\langle \hat A_1*e_i, f_j \rangle \langle f_j, \hat A_2e_i \rangle \\
-                      &= \sum_{i,j}\langle \hat A_2*f_j, e_i \rangle \langle e_i, \hat A_1f_j \rangle \\
-                      &= \sum_j \langle f_j, \hat A_2\hat A_1f_j \rangle \\
+    \text{Sp}(\hat A) &= \sum_i \braket{e_i}{\hat Ae_i} \qquad|\text{ mit } \hat A=\hat A_1\hat A_2 \\
+                      &= \sum_i \braket{e_i}{\hat A_1\hat A_2e_i} \\
+                      &= \sum_i \braket{\hat A_1^\dagger e_i}{\hat A_2e_i} \\
+                      &= \sum_{i,j} \braket{\hat A_1^\dagger e_i}{ f_j } \braket{f_j}{\hat A_2e_i} \\
+                      &= \sum_{i,j}\braket{\hat A_2^\dagger f_j}{e_i} \braket{e_i}{\hat A_1f_j} \\
+                      &= \sum_j \braket{f_j}{\hat A_2\hat A_1f_j} \\
 \end{align*}
 
 \subsection{}
 Nun soll gezeigt werden, dass die Spur zyklisch invariant ist.
-Also das gilt :$\text{Sp}(\hat A\hat B) = \text{Sp}(\hat B\hat A)$
+Also das gilt: $\text{Sp}(\hat A\hat B) = \text{Sp}(\hat B\hat A)$
 \begin{align*}
-    \text{Sp}(\at A\hat B) &= \sum_n \braket{n|AB|n} \\
-                           &= \sum_{n,m} \braket{n|a|m}\braket{m|B|n} \\
-                           &= \sum_{n,m} \braket{m|B|n}\braket{n|A|m} \\
-                           &= \sum_m \braket{m|BA|m} \\
-                           &=\text{Sp}(BA)
+    \text{Sp}(\hat A\hat B) &= \sum_n \braopket{n}{\hat A\hat B}{n} \\
+                           &= \sum_{n,m} \braopket{n}{\hat A}{m} \braopket{m}{\hat B}{n} \\
+                           &= \sum_{n,m} \braopket{m}{\hat B}{n}\braopket{n}{\hat A}{m} \\
+                           &= \sum_m \braopket{m}{\hat B\hat A}{m} \\
+                           &=\text{Sp}(\hat B\hat A)
 \end{align*}
 
 \end{document}
