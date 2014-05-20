@@ -1,0 +1,37 @@
+\input{../header.tex}
+
+\newcounter{thezettel}
+\setcounter{thezettel}{4}
+\renewcommand\thesection{\arabic{thezettel}.\arabic{section}}
+
+
+\title{physik421 - Übung \arabic{thezettel}}
+\author{Lino Lemmer \\ \small{l2@uni-bonn.de} \and Frederike Schrödel \and Simon Schlepphorst\\ \small{s2@uni-bonn.de}}
+
+\begin{document}
+\maketitle
+
+\section{Die Spur von Operatoren}
+\subsection{}
+Es soll gezeigt werden, dass die Spur unabhängig von der Basis ist.
+\begin{align*}
+    \text{Sp}(\hat A) &= \sum_i \langle e_i, \hat Ae_i \rangle \qquad|\text{ mit } \hat A=\hat A_1\hat A_2
+                      &= \sum_i \langle e_i, \hat A_1\hat A_2e_i \rangle \\
+                      &= \sum_i \langle \hat A_1*e_i, \hat A_2e_i \rangle \\
+                      &= \sum_{i,j}\langle \hat A_1*e_i, f_j \rangle \langle f_j, \hat A_2e_i \rangle \\
+                      &= \sum_{i,j}\langle \hat A_2*f_j, e_i \rangle \langle e_i, \hat A_1f_j \rangle \\
+                      &= \sum_j \langle f_j, \hat A_2\hat A_1f_j \rangle \\
+\end{align*}
+
+\subsection{}
+Nun soll gezeigt werden, dass die Spur zyklisch invariant ist.
+Also das gilt :$\text{Sp}(\hat A\hat B) = \text{Sp}(\hat B\hat A)$
+\begin{align*}
+    \text{Sp}(\at A\hat B) &= \sum_n \braket{n|AB|n} \\
+                           &= \sum_{n,m} \braket{n|a|m}\braket{m|B|n} \\
+                           &= \sum_{n,m} \braket{m|B|n}\braket{n|A|m} \\
+                           &= \sum_m \braket{m|BA|m} \\
+                           &=\text{Sp}(BA)
+\end{align*}
+
+\end{document}
