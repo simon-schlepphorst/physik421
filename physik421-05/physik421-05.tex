@@ -1,7 +1,7 @@
 \input{../header.tex}
 
 \newcounter{thezettel}
-\setcounter{thezettel}{4}
+\setcounter{thezettel}{6}
 \renewcommand\thesection{\arabic{thezettel}.\arabic{section}}
 
 
@@ -27,28 +27,71 @@
 
 Bei dieser Aufgabe lassen wir die Hütchen auf Operatoren weg. Operatoren sind durch große, Eigenwerte sind durch kleine Buchstaben gekennzeichnet.
 
-\begin{align*}
-    1 &= \int\!\dif x\, \psi^*\psi \\
-      &= \int\!\dif x\, \psi^*U^{-1}U\psi
-    \intertext{%
-        Da U unitär ist, folgt
-    }
-      &= \int\!\dif x\, \psi^*U^\dagger u\psi.
-    \intertext{%
-        Aus der Definition des hermitisch konjugierten Operators folgt
-    }
-      &= \int\!\dif x\, \del{U\psi}^*u\psi \\
-      &= \int\!\dif x\, \del{u\psi}^*u\psi \\
-      &= \int\!\dif x\, u^*\psi^*u\psi \\
-      &= u^* u\underbrace{\int\!\dif x\, \psi^*\psi}_{=1} \\
-      &= \abs{u}^2.
-    \intertext{%
-        Daraus folgt sofort
-    }
-    \abs{u} &= 1.
-\end{align*}
+\begin{enumerate}[(a)]
+    \item
+        \begin{align*}
+            1 &= \int\!\dif x\, \psi^*\psi \\
+              &= \int\!\dif x\, \psi^*U^{-1}U\psi
+            \intertext{%
+                Da U unitär ist, folgt
+            }
+            &= \int\!\dif x\, \psi^*U^\dagger u\psi.
+            \intertext{%
+                Aus der Definition des hermitisch konjugierten Operators folgt
+            }
+            &= \int\!\dif x\, \del{U\psi}^*u\psi \\
+            &= \int\!\dif x\, \del{u\psi}^*u\psi \\
+            &= \int\!\dif x\, u^*\psi^*u\psi \\
+            &= u^* u\underbrace{\int\!\dif x\, \psi^*\psi}_{=1} \\
+            &= \abs{u}^2.
+            \intertext{%
+                Daraus folgt sofort
+            }
+            \abs{u} &= 1.
+        \end{align*}
+    \item
+    Hermitesch heißt, dass gilt $A^\dagger = A$, wobei $A^\dagger = \del{A^*}^{-1}$. Nach der unitären Transformation $U^{-1}AU$ erhält man
+        \begin{align*}
+            \del{U^{-1}AU}^\dagger &= \del{U^{-1}}^\dagger A^\dagger U^\dagger \\
+                                   &= \del{\del{U^{-1}}^*}^{-1}A \del{U^*}^{-1}
+            \intertext{%
+                Da $U$ unitär ist gilt $U = U^*$.
+            }
+            &= \del{U^{-1}}^{-1} A U^{-1} \\
+            &= U A U^{-1}.
+        \end{align*}
+        Dies würde heißen, er bleib nicht hermitesch.
+\end{enumerate}
 
 \section{Basistransformation}
+
+\subsection{}
+
+Orthonormalität heißt $\vec f_i\vec f_j = \delta_{ij}$.
+\begin{align*}
+    \vec e_i &= \sum_j S_{ji} \vec f_j\\
+    \sum_k \vec f_k \vec e_i &= \sum_k\sum_j S_{ji} \vec f_j \vec f_k \\
+    \sum_k \vec f_k \vec e_i &= \sum_k S_{ki}
+    \intertext{%
+        Diese Summe muss Elementweise übereinstimmen, daher folgt
+    }
+    S_{ki} &= \vec f_k \vec e_i
+\end{align*}
+
+\subsection{}
+
+    Die Transformationsmatrix \textbf{S} sieht für $i,j = 1, \dots, n$ wie folgt aus:
+    \[
+        \textbf{S} =
+        \begin{pmatrix}
+            S_{11} & \dots & S_{1j} & \dots & S_{1n} \\
+            \vdots && \vdots && \vdots \\
+            S_{i1} & \dots & S_{ij} & \dots & S_{in} \\
+            \vdots && \vdots && \vdots \\
+            S_{n1} & \dots & S_{nj} & \dots & S_{nn}
+        \end{pmatrix}
+    \]
+
 \section{Die Spur von Operatoren}
 \subsection{}
 Es soll gezeigt werden, dass die Spur unabhängig von der Basis ist.
