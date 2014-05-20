@@ -11,6 +11,44 @@
 \begin{document}
 \maketitle
 
+\section{}
+\section{Eigenschaften von Operatoren}
+
+\subsection{}
+
+\begin{align*}
+    \psi &= \hat A^{-1} \hat A \psi \\
+         &= \hat A^{-1} a \psi \\
+         &= a \hat A^{-1} \psi \\
+    \implies\qquad \hat A^{-1} \psi &= a^{-1}\psi
+\end{align*}
+
+\subsection{}
+
+Bei dieser Aufgabe lassen wir die Hütchen auf Operatoren weg. Operatoren sind durch große, Eigenwerte sind durch kleine Buchstaben gekennzeichnet.
+
+\begin{align*}
+    1 &= \int\!\dif x\, \psi^*\psi \\
+      &= \int\!\dif x\, \psi^*U^{-1}U\psi
+    \intertext{%
+        Da U unitär ist, folgt
+    }
+      &= \int\!\dif x\, \psi^*U^\dagger u\psi.
+    \intertext{%
+        Aus der Definition des hermitisch konjugierten Operators folgt
+    }
+      &= \int\!\dif x\, \del{U\psi}^*u\psi \\
+      &= \int\!\dif x\, \del{u\psi}^*u\psi \\
+      &= \int\!\dif x\, u^*\psi^*u\psi \\
+      &= u^* u\underbrace{\int\!\dif x\, \psi^*\psi}_{=1} \\
+      &= \abs{u}^2.
+    \intertext{%
+        Daraus folgt sofort
+    }
+    \abs{u} &= 1.
+\end{align*}
+
+\section{}
 \section{Die Spur von Operatoren}
 \subsection{}
 Es soll gezeigt werden, dass die Spur unabhängig von der Basis ist.
