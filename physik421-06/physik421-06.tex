@@ -4,6 +4,8 @@
 \setcounter{thezettel}{6}
 \renewcommand\thesection{\arabic{thezettel}.\arabic{section}}
 
+\newcommand\ccancel[2][black]{\renewcommand\CancelColor{\color{#1}}\cancel{#2}}
+
 
 \title{physik421 - Übung \arabic{thezettel}}
 \author{Lino Lemmer \\ \small{l2@uni-bonn.de} \and Frederike Schrödel \and Simon Schlepphorst\\ \small{s2@uni-bonn.de}}
@@ -12,6 +14,41 @@
 \maketitle
 
 \section{Kommutatoren von linearen Operatoren}
+
+In dieser Aufgabe lassen wir die Hütchen auf den Operatoren weg, da es sich
+hier bei $A$, $B$ und $C$ immer um Operatoren handelt.
+
+\subsection{}
+
+\begin{align*}
+    \sbr{A,BC} &= ABC - BCA \\
+               &= ABC - BAC + BAC -BCA \\
+               &= \del{AB - BA}C + B\del{AC - CA} \\
+               &= \sbr{A,B}C + B\sbr{A,C}
+\end{align*}
+
+\subsection{}
+
+\begin{align*}
+    \sbr{AB,C} &= ABC - CAB \\
+               &= ABC - ACB + ACB - CAB \\
+               &= A\del{BC-CB} + \del{AC-CA}B \\
+               &= A\sbr{B,C} + \sbr{A,C}B
+\end{align*}
+
+\subsection{}
+
+\begin{align*}
+    & \sbr{A,\sbr{B,C}} + \sbr{B,\sbr{C,A}} + \sbr{C\sbr{A,B}}\\
+    &= A\del{BC-CB} - \del{BC-CB}A \\
+    &+ B\del{CA-AC} - \del{CA-AC}B \\
+    &+ C\del{AB-BA} - \del{AB-BA}C \\
+    &= \ccancel[red]{ABC} - \ccancel[orange]{ACB} - \ccancel[yellow]{BCA} + \ccancel[green]{CBA} \\
+    &+ \ccancel[yellow]{BCA} - \ccancel[blue]{BAC} - \ccancel[gray]{CAB} + \ccancel[orange]{ACB} \\
+    &+ \ccancel[gray]{CAB} - \ccancel[green]{CBA} - \ccancel[red]{ABC} + \ccancel[blue]{BAC}
+    &= 0
+\end{align*}
+
 
 \section{Kommutatoren von Operatorfunktionen}
 
