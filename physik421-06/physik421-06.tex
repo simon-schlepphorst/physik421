@@ -80,7 +80,7 @@ $A$ und $B$ kommutieren mit $C$ aber nicht miteinander: $\sbr{A,B}=C$. Operatorf
                     &= nCB^{n-1}B + B^nC \\
                     &= nCB^n + CB^n \\
                     &= (n+1)CB^n
-    \intertext{Behauptung durch vollständige Induktion Bewiesen. Damit folgt}
+    \intertext{Behauptung durch vollständige Induktion bewiesen. Damit folgt}
     \sbr{A,f(B)} &= \sum_{n=0} \beta_n \sbr{A,B^n} \\
                  &= C\sum_{n=0} \beta_n nB^{n-1} \\
                  &= C\dod{}{B}\sum_{n=0} \beta_n B^n \\
@@ -103,7 +103,7 @@ $A$ und $B$ kommutieren mit $C$ aber nicht miteinander: $\sbr{A,B}=C$. Operatorf
                     &= A^n\sbr{A,B} + \sbr{A^n,B}A \\
                     &= A^nC + CnA^{n-1}A \\
                     &= (n+1)CA^n
-    \intertext{Behauptung durch vollständiger Induktion Bewiesen. Daraus folgt}
+    \intertext{Behauptung durch vollständiger Induktion bewiesen. Daraus folgt}
     \sbr{g(A),B} &= \sum_{n=0} \alpha_n \sbr{A^n,B} \\
                  &= C\sum_{n=0} \alpha_n n A^{n-1} \\
                  &= C\dod{}{A} \sum_{n=0} \alpha_n A^n \\
@@ -116,6 +116,17 @@ $A$ und $B$ kommutieren mit $C$ aber nicht miteinander: $\sbr{A,B}=C$. Operatorf
 \section{Auf- und Absteigeoperatoren}
 
 \subsection{}
+
+\begin{align*}
+ \hat a_- u_n(x) &= \hat a_- \frac1{\sqrt{\hbar \omega_0 n}} \hat a_+ u_{n-1}(x)\\
+ &= \frac1{\sqrt{\hbar \omega_0 n}} \hat a_-\hat a_+ u_{n-1}(x)\\
+ &= \frac1{\sqrt{\hbar \omega_0 n}} \del{\hat H + \frac{\hbar \omega_0}{2}} u_{n-1}(x)\\
+ &= \underbrace{\hat H \frac1{\sqrt{\hbar \omega_0 n}} u_{n-1}(x)}_{= \sqrt{\hbar\omega_0 n} u_{n-1}(x) - \frac{\sqrt{\hbar \omega_0}}{2\sqrt{n}}u_{n-1}(x) \quad?} 
+ + \frac{\sqrt{\hbar \omega_0}}{2 \sqrt{n}} u_{n-1}(x)\\
+ &= \ldots\\
+ &= \sqrt{\hbar \omega_0 n} u_{n-1}(x)
+\end{align*}
+
 
 \subsection{}
 
