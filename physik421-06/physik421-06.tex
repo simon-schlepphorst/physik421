@@ -13,10 +13,10 @@
 \begin{document}
 \maketitle
 
-\section{Kommutatoren von linearen Operatoren}
+In diesen Aufgaben lassen wir die Hütchen auf den Operatoren $\hat A$, $\hat B$
+und $\hat C$ weg, da es sich hier bei immer um Operatoren handelt.
 
-In dieser Aufgabe lassen wir die Hütchen auf den Operatoren $\hat A$, $\hat B$ und $\hat C$
-weg, da es sich hier bei immer um Operatoren handelt.
+\section{Kommutatoren von linearen Operatoren}
 
 \subsection{}
 
@@ -55,6 +55,61 @@ Aus $\sbr{A,C}=0$ und $\sbr{B,C}=0$ folgt nicht notwendigerweise $\sbr{A,B}=0$.
 Sei $C=1$, so folgt $\sbr{A,C}=0$ und $\sbr{B,C}=0$, nicht jedoch zwangsweise $\sbr{A,B}=0$. Beispiel: $A=\hat x$, $B=\hat p_x$.
 
 \section{Kommutatoren von Operatorfunktionen}
+
+$A$ und $B$ kommutieren mit $C$ aber nicht miteinander: $\sbr{A,B}=C$. Operatorfunktionen sind als Potenzreihen definiert.
+
+\subsection{$\sbr{A,f(B)}=Cf'(B)$}
+
+\begin{align*}
+    f(B) &= \sum_{n=0} \beta_nB^n
+    \intertext{Behauptung:}
+    \sbr{A,B^n} &= nCB^{n-1}
+    \intertext{Beweis durch vollständige Induktion:\newline $n=1$:}
+    \sbr{A,B} &= C \\
+              &= 1CB^0
+    \intertext{$n=2$:}
+    \sbr{A,B^2} &= ABB - BBA \\
+                &= ABB - BAB + BAB - BBA \\
+                &= \sbr{A,B}B + B\sbr{A,B} \\
+                &= CB + BC \\
+                &= 2CB
+    \intertext{$n \to n+1$:}
+    \sbr{A,B^{n+1}} &= AB^{n+1} - B^{n+1}A \\
+                    &= AB^nB - B^nAB + B^nAB - B^nBA \\
+                    &= \sbr{A,B^n}B + B^n\sbr{A,B} \\
+                    &= nCB^{n-1}B + B^nC \\
+                    &= nCB^n + CB^n \\
+                    &= (n+1)CB^n
+    \intertext{Behauptung durch vollständige Induktion Bewiesen. Damit folgt}
+    \sbr{A,f(B)} &= \sum_{n=0} \beta_n \sbr{A,B^n} \\
+                 &= C\sum_{n=0} \beta_n nB^{n-1} \\
+                 &= C\dod{}{B}\sum_{n=0} \beta_n B^n \\
+                 &= C\dod{}{B} f(B) \\
+                 &= Cf'(B).
+\end{align*}
+
+\subsection{$\sbr{g(A),B}=Cg'(A)$}
+
+\begin{align*}
+    g(A) &= \sum_{n=0} \alpha_n A^n
+    \intertext{Behauptung:}
+    \sbr{A^n,B} &= CnA^{n-1}
+    \intertext{Beweis durch vollständige Induktion:\newline $n=1$:}
+    \sbr{A,B} &= C \\
+              &= 1CA^0
+    \intertext{$n\to n+1$:}
+    \sbr{A^{n+1},B} &= A^{n+1}B - BA^{n+1} \\
+                    &= A^nAB - A^nBA + A^nBA - BA^nA \\
+                    &= A^n\sbr{A,B} + \sbr{A^n,B}A \\
+                    &= A^nC + CnA^{n-1}A \\
+                    &= (n+1)CA^n
+    \intertext{Behauptung durch vollständiger Induktion Bewiesen. Daraus folgt}
+    \sbr{g(A),B} &= \sum_{n=0} \alpha_n \sbr{A^n,B} \\
+                 &= C\sum_{n=0} \alpha_n n A^{n-1} \\
+                 &= C\dod{}{A} \sum_{n=0} \alpha_n A^n \\
+                 &= C\dod{}{A} g(A) \\
+                 &= Cg'(A).
+\end{align*}
 
 \section{Hermitesche Konjugation von Produkten von Operatoren}
 
