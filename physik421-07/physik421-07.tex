@@ -4,7 +4,7 @@
 \setcounter{thezettel}{7}
 \renewcommand\thesection{\arabic{thezettel}.\arabic{section}}
 
-\newcommand\ccancel[2][black]{\renewcommand\CancelColor{\color{#1}}\cancel{#2}}
+\newcommand{\ui}[1]{\int_{-\infty}^{\infty}\dif {#1}\;}
 
 
 \title{physik421 - Übung \arabic{thezettel}}
@@ -102,5 +102,132 @@ Nun ergibt eine Messung eine lineare Polarisation in $x$-Richtung für Photon 1 
 \section{Hamilton-Operator für Teilchen in externen $\vec E$ und $\vec B$ Feldern}
 
 \section{Wellenfunktion mit minimaler Unschärfe}
+
+Betrachtet wird die in der Vorlesung hergeleitete Wellenfunktion mit minimaler Unschärfe
+\[
+	\psi_m\del{x}=\frac1{\del{2\pi\mw{\del{\Delta x}^2}}^{\frac14}}\ee^{-\frac{\del{x-\mw{x}}^2}{4\mw{\del{\Delta x}^2}}}
+	\ee^{\frac{\ii x\mw{p_x}}{\hbar}}
+\]
+
+\subsection{Normierung}
+
+Es soll gezeigt werden, dass obige Wellenfunktion normiert ist. Definiere $a\equiv\mw{\del{\Delta x}^2}$:
+\begin{align*}
+	\ui{x}\abs{\psi_m\del{x}}^2&=\ui{x}\psi_m^*\del{x}\psi_m\del{x}\\
+	&=\ui{x}\frac1{\del{2\pi a}^{\frac12}}\ee^{-\frac{\del{x-\mw{x}}^2}{2a}}\\
+	&=\frac1{\del{2\pi a}^{\frac12}}\ui{x}\ee^{-\frac1{2a}\del{x-\mw{x}}^2}\\
+	\intertext{%
+		Nach dem Hinweis von Aufgabenblatt 3, Aufgabe 3 folgt
+	}
+	&=\frac1{\del{2\pi a}^{\frac12}}\cdot\del{2\pi a}^{\frac12}\\
+	&=1
+\end{align*}
+$\psi_m$ ist also normiert.
+
+ Anm.: Die folgenden drei Aufgabenstellungen $3.2$ - $3.4$ sind leicht irritierend, eine Verwendung von $x'$ statt $x$ wäre evtl. sinnvoller gewesen.
+
+\subsection{Erwartungswert von $x$}
+
+Nun soll gezeigt werden, dass der Erwartungswert von $x$ gleich $\mw{x}$ in $\psi_m$ ist: 
+\begin{align*}
+	\mw{x}&=\ui{x}\psi_m^*\del{x}x\psi_m\del{x}\\
+	&=\frac1{\del{2\pi a}^{\frac12}}\ui{x}x\ee^{-\frac{\del{x-\mw{x}}^2}{2a}}\\
+	\intertext{%
+		Substituiere $z=x-\mw{x}\iff x=z+\mw{x}\Rightarrow\dif x=\dif z$ 
+	}
+	&=\ui{z}\del{z+\mw{x}}\ee^{-\frac{z^2}{2a}}\\
+	&=\underbrace{\frac1{\del{2\pi a}^{\frac12}}\ui{z}z\ee^{-\frac{z^2}{2a}}}_{=0}
+	+\underbrace{\frac1{\del{2\pi a}^{\frac12}}\ui{z}\mw{x}\ee^{-\frac{z^2}{2a}}}_{=\mw{x}}\\
+	&=\mw{x}
+\end{align*}
+Damit ist die Annahme gezeigt.
+
+\subsection{Mittlere quadratische Abweichung von $x$ von seinem Mittelwert}
+
+Nun soll gezeigt werden, dass $\mw{\del{\Delta x}^2}=\mw{x^2}-\mw{x}^2$ gleich $\mw{\del{\Delta x}^2}$ in $\psi_m$ ist:\\
+Dazu berechne ich erst mal $\mw{x^2}$:
+\begin{align*}
+	\mw{x^2}&=\ui{x}\psi_m^*\del{x}x^2\psi_m\del{x}\\
+	&=\frac1{\del{2\pi a}^{\frac12}}\ui{x}x^2\ee^{-\frac{\del{x-\mw{x}}^2}{2a}}\\
+	\intertext{%
+		Substituiere wieder $z=x-\mw{x}\iff x=z+\mw{x}\Rightarrow\dif x=\dif z$
+	}
+	&=\frac1{\del{2\pi a}^{\frac12}}\ui{z}\del{z+\mw{x}}^2\ee^{-\frac{z^2}{2a}}\\
+	&=\frac1{\del{2\pi a}^{\frac12}}\ui{z}z^2\ee^{-\frac{z^2}{2a}}
+	+\underbrace{\frac1{\del{2\pi a}^{\frac12}}\ui{z}2z\mw{x}\ee^{-\frac{z^2}{2a}}}_{=0}
+	+\underbrace{\frac1{\del{2\pi a}^{\frac12}}\ui{z}\mw{x}^2\ee^{-\frac{z^2}{2a}}}_{=\mw{x}^2}\\
+	\intertext{
+		Mit partieller Integration von $\ui{z}z\cdot z\ee^{-\frac{z^2}{2a}}$ folgt
+	}
+	&=\underbrace{\left[az\ee^{-\frac{z^2}{2a}}\right]_{-\infty}^{\infty}}_{=0}
+	+\underbrace{\frac1{\del{2\pi a}^{\frac12}}\ui{z}a\ee^{-\frac{z^2}{2a}}}_{=a}+\mw{x}^2
+	\intertext{%
+		Mit der oben stehenden Definition von $a$ folgt
+	}
+	&=\mw{\del{\Delta x}^2}+\mw{x}^2
+\end{align*}
+Und in der Tat gilt
+\[
+	\mw{\del{\Delta x}^2}=\mw{x^2}-\mw{x}^2=\mw{\del{\Delta x}^2}+\mw{x}^2-\mw{x}^2=\mw{\del{\Delta x}^2}
+\]
+Ich denke an dieser Stelle wird die Verwirrung auch recht klar.
+
+\subsection{Erwartungswert von $p_x$}
+
+Nun soll gezeigt werden, dass der Erwartungswert von $p_x$ gleich $\mw{p_x}$ in $\psi_m$ ist:
+\begin{align*}
+	\mw{p_x}&=\ui{x}\psi_m^*\del{x}p_x\psi_m\del{x}\\
+	&=-\ui{x}\psi_m^*\del{x}\ii\hbar\dpd{}{x}\psi_m\del{x}\\
+	&=-\frac{\ii\hbar}{\del{2\pi a}^{\frac12}}\ui{x}\ee^{-\frac{\del{x-\mw{x}}^2}{4a}}\ee^{-\frac{\ii x\mw{p_x}}{\hbar}}
+	\dpd{}{x}\ee^{-\frac{\del{x-\mw{x}}^2}{4a}}\ee^{\frac{\ii x\mw{p_x}}{\hbar}}\\
+	&=-\frac{\ii\hbar}{\del{2\pi a}^{\frac12}}\ui{x}\ee^{-\frac{\del{x-\mw{x}}^2}{4a}}\dpd{}{x}\ee^{-\frac{\del{x-\mw{x}}^2}{4a}}
+	-\frac{\ii\hbar}{\del{2\pi a}^{\frac12}}\ui{x}\ee^{-\frac{\del{x-\mw{x}}^2}{2a}}\ee^{-\frac{\ii x\mw{p_x}}{\hbar}}
+	\dpd{}{x}\ee^{\frac{\ii x\mw{p_x}}{\hbar}}\\
+	&=-\frac{\ii\hbar}{\del{2\pi a}^{\frac12}}\ui{x}\frac1a\del{x-\mw{x}}\ee^{-\frac{\del{x-\mw{x}}^2}{2a}}
+	-\underbrace{\frac{\ii\hbar}{\del{2\pi a}^{\frac12}}\ui{x}\frac{\ii\mw{p_x}}{\hbar}\ee^{-\frac{\del{x-\mw{x}}^2}{2a}}}_{=-\mw{p_x}}\\
+	\intertext{%
+		Substituiere mal wieder $z=x-\mw{x}\iff x=z+\mw{x}\Rightarrow\dif x=\dif z$
+	}
+	&=-\underbrace{\frac{\ii\hbar}{\del{2\pi a}^{\frac12}}\ui{z}\frac za\ee^{-\frac{z^2}{2a}}}_{=0}+\mw{p_x}\\
+	&=\mw{p_x}
+\end{align*}
+
+\subsection{Mittlere quadratische Abweichung von $p_x$ und Unschärferelation}
+
+Nun soll die mittlere quadratische Abweichung von $p_x$ berechnet werden. Dazu wieder zuerst $\mw{p_x^2}$:
+\begin{align*}
+	\mw{p_x^2}&=\ui{x}\psi_m^*\del{x}p_x^2\psi_m\del{x}\\
+	&=-\ui{x}\psi_m^*\del{x}\hbar^2\dpd[2]{}{x}\psi_m\del{x}\\
+	&=-\frac{\hbar^2}{\del{2\pi a}^{\frac12}}\ui{x}\ee^{-\frac{\del{x-\mw{x}}^2}{4a}}\ee^{-\frac{\ii x\mw{p_x}}{\hbar}}
+	\dpd[2]{}{x}\ee^{-\frac{\del{x-\mw{x}}^2}{4a}}\ee^{\frac{\ii x\mw{p_x}}{\hbar}}\\
+	&=-\frac{\hbar^2}{\del{2\pi a}^{\frac12}}\ui{x}\ee^{-\frac{\del{x-\mw{x}}^2}{4a}}\dpd[2]{}{x}\ee^{-\frac{\del{x-\mw{x}}^2}{4a}}
+	-\frac{\hbar^2}{\del{2\pi a}^{\frac12}}\ui{x}\ee^{-\frac{\del{x-\mw{x}}^2}{2a}}\ee^{-\frac{\ii x\mw{p_x}}{\hbar}}
+	\dpd[2]{}{x}\ee^{\frac{\ii x\mw{p_x}}{\hbar}}\\
+	&=-\frac{\hbar^2}{\del{2\pi a}^{\frac12}}\ui{x}\ee^{-\frac{\del{x-\mw{x}}^2}{4a}}
+	\frac{-1}{2a}\dpd{}x\del{x-\mw{x}}\ee^{-\frac{\del{x-\mw{x}}^2}{4a}}
+	+\underbrace{\frac{\hbar^2}{\del{2\pi a}^{\frac12}}\ui{x}\frac{\mw{p_x}^2}{\hbar^2}\ee^{-\frac{\del{x-\mw{x}}^2}{2a}}}_{=\mw{p_x}^2}\\
+	&=\mw{p_x}^2-\frac{\hbar^2}{\del{2\pi a}^{\frac12}}\ui{x}\ee^{-\frac{\del{x-\mw{x}}^2}{4a}}
+	\frac1{4a^2}\del{-2a+\del{x^2-x\mw{x}}-\del{x\mw{x}-\mw{x}^2}}\ee^{-\frac{\del{x-\mw{x}}^2}{4a}}\\
+	&=\mw{p_x}^2-\frac{\hbar^2}{4a^2\del{2\pi a}^{\frac12}}\ui{x}\del{-2a+x^2-2x\mw{x}+\mw{x}^2}\ee^{-\frac{\del{x-\mw{x}}^2}{2a}}\\
+	&=\mw{p_x}^2-\frac{\hbar^2}{4a^2\del{2\pi a}^{\frac12}}\ui{x}\del{-2a+\del{x-\mw{x}}^2}\ee^{-\frac{\del{x-\mw{x}}^2}{2a}}\\
+	\intertext{%
+		Substituiere mal wieder $z=x-\mw{x}\iff x=z+\mw{x}\Rightarrow\dif x=\dif z$
+	}
+	&=\mw{p_x}^2-\frac{\hbar^2}{4a^2\del{2\pi a}^{\frac12}}\ui{z}\del{-2a+z^2}\ee^{-\frac{z^2}{2a}}\\
+	&=\mw{p_x}^2-\frac{\hbar^2}{4a^2}\del{-2a\underbrace{\frac1{\del{2\pi a}^{\frac12}}\ui{z}\ee^{-\frac{z^2}{2a}}}_{=1}
+	+\underbrace{\frac1{\del{2\pi a}^{\frac12}}\ui{z}z^2\ee^{-\frac{z^2}{2a}}}_{=a}}\\
+	&==\mw{p_x}^2+\frac{\hbar^2}{4a}
+\end{align*}
+Daraus folgt mit der Definition von $a$:
+\[
+	\mw{\del{\Delta p_x}^2}=\mw{p_x^2}-\mw{p_x}^2=\frac{\hbar^2}{4\mw{\del{\Delta x}^2}}=
+\]
+Damit ist
+\[
+	\mw{\del{\Delta x}^2}\cdot\mw{\del{\Delta p_x}^2}=\frac{\hbar^2}4
+\]
+Nach der Aufgabenstellung sollte $\frac{\hbar^4}4$ herauskommen, aber dann würde sich nicht die Unschärferelation ergeben, daher bin ich mir sicher, dass mein Ergebnis richtig ist.
+
+
 
 \end{document}
