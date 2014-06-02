@@ -1,0 +1,53 @@
+\input{../header.tex}
+
+
+\newcounter{thezettel}
+\setcounter{thezettel}{6}
+\renewcommand\thesection{\arabic{thezettel}.\arabic{section}}
+
+\newcommand\ccancel[2][black]{\renewcommand\CancelColor{\color{#1}}\cancel{#2}}
+
+
+\title{physik421 - Übung \arabic{thezettel}}
+\author{Lino Lemmer \\ \small{l2@uni-bonn.de} \and Frederike Schrödel \and Simon Schlepphorst\\ \small{s2@uni-bonn.de}}
+
+\begin{document}
+\maketitle
+
+\section{Verschränkte Wellenfunktion}
+\subsection{}
+
+\section{Hamilton-Operator für Teilchen im externen $\vec E$ und $\vec B$ Feldern}
+\subsection{}
+Es ist die Lagrange-Funktion für ein geladenes Teilchen in externen elektromagnetischen Feldern gegeben:
+\[
+    L = \frac 12 m(\dot\vec x)^2-q(V-\dot\vec x\vec A)
+\]
+Um den kanonisch nonjugierten Impuls zu bestimmen nutze ich:
+\[
+    \vec P = \dpd{L}{\dot\vec x} = m\dot\vec x-q\vec A
+\]
+
+\subsection{}
+Die dazu gehörige Hamilto-Funktion lautet:
+\begin{align*}
+    H &= \skp{\dot\vec q}{\vec P}-L \\
+      &= \dot\vec x(m\dot\vec x+qA) -\frac 12 m(\dot\vec x)^2+q(V-\dot\vec xA) \\
+      &= m\vec\dot x^2=\cancel{qA\vec\dot x}--\frac 12m\dot\vec x^2+qV-\cancel{q\dot\vec xA} \\
+      &= \frac 12 m\vec\dot x^2+qV \\
+      &= \frac{1}{2m}(m\vec\dot x)^2+qV \\
+      &= \frac{1}{2m}(\vec p-q\vec A)+qV
+\end{align*}
+
+\subsection{}
+Es soll gezeigt werden dass die Hamilton-Funktion die Gesamt- Energie des Systems beschreibt.
+Die Gesamt-Energie erhalten wir durch:
+\[
+    E_\text{ges} = T+V
+\]
+Diese Formel entspricht in den meisten Fällen bereits der Hamilton-Funktion.
+In diesen Fall sollte man berücksichtigen, dass die kinetische Energie gegeben ist durch $T= \frac 12 \vec\dot x^2$,
+die potentielle Energie lautet allerdings eigentlich nur $V=qV$ da das Magnetfeld nur eine verschiebung verursacht.
+
+
+\end{document}
