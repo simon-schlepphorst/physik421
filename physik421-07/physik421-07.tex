@@ -15,6 +15,90 @@
 
 \section{Verschränkte Wellenfunktion}
 
+\subsection{}
+
+\begin{align*}
+    \psi &= \frac 1{\sqrt2} \del{\psi_{1,\text{L}}\psi_{2,\text{L}}-\psi_{1,\text{R}}\psi_{2,\text{R}}} \\
+         &= \frac1{\sqrt2}
+    \del{\frac{\del{\psi_{1,x}-\ii\psi_{1,y}}\del{\psi_{2,x}+\ii\psi_{2,y}}}2 -
+    \frac{\del{\psi_{1,x}+\ii\psi_{1,y}}\del{\psi_{2,x}-\ii\psi_{2,y}}}2} \\
+    &= \frac1{\sqrt8}\del{\psi_{1,x}\psi_{2_x} + \ii\psi_{1,x}\psi_{2,y} - \ii\psi_{2,x}\psi_{1,y} + \psi_{1,y}\psi_{2,y} - \psi_{1,x}\psi_{2,x} +  \ii\psi_{1,x}\psi_{2,y} - \ii\psi_{1,y}\psi_{2,x} - \psi_{1,y}\psi_{2,y} } \\
+    &= \frac\ii{\sqrt2}\del{\psi_{1,x}\psi_{2,y}-\psi_{1,y}\psi_{2,x}}
+\end{align*}
+
+\subsection{}
+
+Ergibt die Messung für Photon 1 eine lineare Polarisation in $x$-Richtung
+können wir
+\begin{enumerate}[(i)]
+    \item
+        aus der Darstellung mit linearer Basis sagen, dass Photon 2 in $y$-Richtung polarisiert ist.
+    \item
+        aus der Darstellung in zirkularen Basis nichts heraus finden.
+\end{enumerate}
+
+\subsection{}
+
+Nun ergibt eine Messung eine lineare Polarisation in $x$-Richtung für Photon 1 und eine linkshändig zirkulare Polarisation für Photon 2.
+\begin{enumerate}[(i)]
+    \item
+        Wird die Messung an Photon 1 zuerst durchgeführt, kollabiert die Wellenfunktion zu
+        \[
+            \psi_I = \psi_{1,x}\psi_{2,y}.
+        \]
+    \item
+        Wird die Messung an Photon 2 zuerst durchgeführt, kollabiert die Wellenfunktion zu
+        \[
+            \psi_{II} = \psi_{1,\text{L}}\psi_{2,\text{L}}.
+        \]
+\end{enumerate}
+
+\subsection{}
+
+\begin{enumerate}[(i)]
+    \item
+        In linearer Basis lassen sich die beiden Wellenfunktionen aus der letzten Teilaufgabe als
+    \begin{align*}
+        \psi_I &= \psi_{1,x}\psi_{2,y}
+        \intertext{%
+            bzw. als
+        }
+        \psi_{II} &= \frac{\del{\psi_{1,x}-\ii\psi_{1,y}}\del{\psi_{2,x}+\ii\psi_{2,y}}}2 \\
+        &= \half\del{\psi_{1,x}\psi_{2_x} + \ii\psi_{1,x}\psi_{2,y} - \ii\psi_{2,x}\psi_{1,y} + \psi_{1,y}\psi_{2,y}}
+    \end{align*}
+    ausdrücken.
+    \item
+        In zirkularer Basis lassen sich die beiden Wellenfunktionen als
+        \begin{align*}
+            \psi_I &= \frac\ii{2} \del{\psi_{1,\text{R}}-\psi_{1,\text{L}}} \del{\psi_{2,\text{R}}-\psi_{2,\text{L}}} \\
+                 &= \frac \ii2\del{\psi_{1,\text{R}}\psi_{2,\text{R}} - \psi_{1,\text{R}}\psi_{2,\text{L}} - \psi_{1,\text{L}}\psi_{2,\text{R}} + \psi_{1,\text{L}}\psi_{2,\text{L}}}
+            \intertext{%
+                bzw. als
+            }
+            \psi_{II} &= \psi_{1,\text{L}}\psi_{2,\text{L}}
+        \end{align*}
+        darstellen.
+    \item
+        Als Mischbasis wähle ich für $\psi_1$ die lineare und für $\psi_2$ die
+        zirkulare Basis. So erhalte ich für die beiden Wellenfunktionen nach
+        der Messung
+        \begin{align*}
+            \psi_I &= \frac\ii{\sqrt2} \psi_{1,x}\del{\psi_{2,\text{R}}-\psi_{2,\text{L}}}
+            \intertext{%
+                und
+            }
+            \psi_{II} &= \frac1{\sqrt2} \del{\psi_{1,x} - \ii\psi_{1,y}}\psi_{2,\text{L}}.
+            \intertext{%
+                Setzt man nun in $\psi_I$ die Transformation von $\psi_{2,\text{R}}$ ein erhält man
+            }
+            \psi_I &= \frac{\ii}{\sqrt{2}} \psi_{1,x}\del{\frac{1}{\sqrt2}\del{\psi_{2,x}-\ii\psi_{2,y}} - \psi_{2,\text{L}}} \\
+                   &= \frac\ii2\psi_{1,x}\psi_{2,x} + \half \psi_{1,x}\psi_{2,y} - \frac\ii{\sqrt2}\psi_{1,x}\psi_{2,\text{L}} \\
+                   &\overset{?}{=} \frac1{\sqrt2} \del{\psi_{1,x} - \ii\psi_{1,y}}\psi_{2,\text{L}} \\
+            &= \psi_{II}
+        \end{align*}
+\end{enumerate}
+
+
 \section{Hamilton-Operator für Teilchen in externen $\vec E$ und $\vec B$ Feldern}
 
 \section{Wellenfunktion mit minimaler Unschärfe}
