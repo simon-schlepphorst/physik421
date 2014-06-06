@@ -5,6 +5,7 @@
 \renewcommand\thesection{\arabic{thezettel}.\arabic{section}}
 
 \newcommand{\ui}[1]{\int_{-\infty}^{\infty}\dif {#1}\;}
+\newcommand\ccancel[2][black]{\renewcommand\CancelColor{\color{#1}}\cancel{#2}}
 
 
 \title{physik421 - Übung \arabic{thezettel}}
@@ -100,6 +101,37 @@ Nun ergibt eine Messung eine lineare Polarisation in $x$-Richtung für Photon 1 
 
 
 \section{Hamilton-Operator für Teilchen in externen $\vec E$ und $\vec B$ Feldern}
+
+\subsection{}
+Es ist die Lagrange-Funktion für ein geladenes Teilchen in externen elektromagnetischen Feldern gegeben:
+\[
+    L = \frac 12 m(\dot\vec x)^2-q\del{V-\dot\vec x\vec A}
+\]
+Um den kanonisch konjugierten Impuls zu bestimmen nutze ich:
+\[
+    \vec P = \dpd{L}{\dot\vec x} = m\dot\vec x-q\vec A
+\]
+
+\subsection{}
+Die dazu gehörige Hamilton-Funktion lautet:
+\begin{align*}
+    H &= \skp{\dot\vec q}{\vec P}-L \\
+      &= \dot\vec x(m\dot\vec x+qA) -\frac 12 m(\dot\vec x)^2+q(V-\dot\vec xA) \\
+      &= m\vec\dot x^2=\cancel{qA\vec\dot x}--\frac 12m\dot\vec x^2+qV-\cancel{q\dot\vec xA} \\
+      &= \frac 12 m\vec\dot x^2+qV \\
+      &= \frac{1}{2m}(m\vec\dot x)^2+qV \\
+      &= \frac{1}{2m}(\vec p-q\vec A)+qV
+\end{align*}
+
+\subsection{}
+Es soll gezeigt werden, dass die Hamilton-Funktion die Gesamt-Energie des
+Systems beschreibt.Die Gesamt-Energie erhalten wir durch:
+\[
+    E_\text{ges} = T+V
+\]
+Diese Formel entspricht in den meisten Fällen bereits der Hamilton-Funktion.
+In diesen Fall sollte man berücksichtigen, dass die kinetische Energie gegeben ist durch $T= \frac 12 \vec\dot x^2$,
+die potentielle Energie lautet allerdings eigentlich nur $V=qV$, da das Magnetfeld nur eine Verschiebung verursacht.
 
 \section{Wellenfunktion mit minimaler Unschärfe}
 
@@ -227,7 +259,5 @@ Damit ist
 	\mw{\del{\Delta x}^2}\cdot\mw{\del{\Delta p_x}^2}=\frac{\hbar^2}4
 \]
 Nach der Aufgabenstellung sollte $\frac{\hbar^4}4$ herauskommen, aber dann würde sich nicht die Unschärferelation ergeben, daher bin ich mir sicher, dass mein Ergebnis richtig ist.
-
-
 
 \end{document}
