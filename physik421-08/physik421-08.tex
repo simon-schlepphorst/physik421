@@ -14,4 +14,34 @@
 \begin{document}
 \maketitle
 
+\section{}
+
+\section{}
+
+\section{Heisenbergdarstellung von Operatoren}
+
+Gegeben:
+\begin{align*}
+ \hat H = \frac{\hat p^2}{2m} - qE\hat x
+\end{align*}
+
+Zu zeigen:
+\begin{align}
+ \sbr{\hat A^n, \hat B} = n \hat A^{n-1} \sbr{\hat A, \hat B} \label{8.3-Induktion}
+\end{align}
+Beweis durch vollständige Induktion:
+\begin{align*}
+\intertext{$n = 1$}
+ \sbr{\hat A, \hat B} &= 1 \hat A^0 \sbr{\hat A, \hat B}
+ \intertext{Angenommen es gelte (\ref{8.3-Induktion}), Intduktionsschritt mit $n$}
+ \sbr{\hat A^{n+1}, \hat B} &= \hat A^{n+1} \hat B - \hat B \hat A^{n+1}\\
+ &= \hat A^{n} \hat A \hat B - \hat A^{n} \hat B \hat A + \hat A^{n} \hat B \hat A - \hat B \hat A^{n} \hat A\\
+ &= \hat A^{n} \sbr{\hat A, \hat B} + \sbr{\hat A^n, \hat B} \hat A\\
+ &= \hat A^{n} \sbr{\hat A, \hat B} + n \hat A^n \sbr{\hat A. \hat B}\\
+ &= \del{n+1} \hat A^n \sbr{\hat A, \hat B}\\
+ \\
+ \implies \sbr{\hat A^n, \hat B} &= n\hat A^{n-1} \sbr{\hat A, \hat B}
+\end{align*}
+
+
 \end{document}
