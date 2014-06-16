@@ -14,4 +14,266 @@
 \begin{document}
 \maketitle
 
+\section{Eigenvektoren in einer Orthonormalbasis}
+\subsection{}
+Es soll bestimmt werden, ob $\sigma_y$ hermitesch ist.
+\begin{align*}
+    \sigma^\dagger_y &= 
+    \begin{pmatrix}
+        0 &\ii \\
+        -\ii &0
+    \end{pmatrix}* \\
+    &= \begin{pmatrix}
+        0 &-\ii \\
+        \ii &0
+    \end{pmatrix} \\
+    &= \sigma_y \implies \text{hermitesch}
+\end{align*}
+
+Außerdem sollen die Eigenwerte und Eigenvektoren bestimmt werden.
+\begin{align*}
+    \abs{\sigma_y-\lambda\mathbb{1}} &= (-\lambda)^2-(-\ii)\ii \\
+                                    &= \lambda^2-1 \\
+                                    &\implies \lambda_1 =1, \qquad \lambda_2 = -1
+    \lambda_1 &\implies \underbrace{\frac{1}{\sqrt{2}}}_\text{normierung}\begin{pmatrix}
+        1 \\ \ii
+    \end{pmatrix} = \Phi_1\\
+    \lambda_2 &\implies \frac 1{\sqrt 2}\begin{pmatrix}
+        1 \\ -\ii
+    \end{pmatrix} = \Phi_2
+\end{align*}
+
+\subsection{}
+Es soll Orthogonalität und Vollständigkeit der Eigenvektoren überprüft werden.
+
+Orthogonalität: $\Phi_1*\Phi_2 = 1-1 = 0$
+
+Vollständigkeit: $\tilde{\eta_1} = \frac 1{\sqrt 2}(\Phi_1 +\Phi_2) \qquad tilde{\eta_2} = \frac 1{\sqrt 2}(\Phi_1 -\Phi_2) $
+
+Da man die Bais durch die Eigenvektoren darstellen kann, müssen die Eigenvektoren vollständig sein.
+
+\subsection{}
+\begin{align*}
+    P_\ii &= \Phi_\ii\dagger\Phi_\ii \\
+    P_1 &= 
+    \begin{pmatrix}
+        1 \\ \ii
+    \end{pmatrix}\begin{pmatrix}
+        1 & -\ii
+    \end{pmatrix} 
+    = \frac 12
+    \begin{pmatrix}
+        1 &-\ii \\
+        \ii &1
+    \end{pmatrix} \\
+     P_2 &= 
+    \begin{pmatrix}
+        1 \\ -\ii
+    \end{pmatrix}\begin{pmatrix}
+        1 & \ii
+    \end{pmatrix} 
+    = \frac 12
+    \begin{pmatrix}
+        1 & \ii \\
+        -\ii & 1
+    \end{pmatrix} \\
+    P_1\Phi_1 &= \frac 1{2\sqrt 2}
+    \begin{pmatrix}
+        1 & -\ii \\
+        \ii & 1
+    \end{pmatrix} \begin{pmatrix}
+        1 \\ \ii 
+    \end{pmatrix}
+    = \frac 1{\cancel{2}\sqrt 2}\begin{pmatrix}
+        \cancel{2} \\ \cancel{2} \ii
+    \end{pmatrix} 
+    = \Phi_1 \\ 
+    P_1\Phi_2 &= \frac 1{2\sqrt 2}
+    \begin{pmatrix}
+        1 & -\ii \\
+        \ii & 1
+    \end{pmatrix} \begin{pmatrix}
+        1 \\ -\ii 
+    \end{pmatrix}
+    = \begin{pmatrix}
+        0 \\ 0
+    \end{pmatrix} \\
+    P_2\Phi_1 &= \frac 1{2\sqrt 2}
+    \begin{pmatrix}
+        1 & \ii \\
+        -\ii & 1
+    \end{pmatrix} \begin{pmatrix}
+        1 \\ \ii 
+    \end{pmatrix}
+    = \begin{pmatrix}
+        0 \\ 0
+    \end{pmatrix} \\
+    P_2\Phi_2 &= \frac 1{2\sqrt 2}
+    \begin{pmatrix}
+        1 & \ii \\
+        -\ii & 1
+    \end{pmatrix} \begin{pmatrix}
+        1 \\ -\ii 
+    \end{pmatrix}
+    = \frac 1{\cancel{2}\sqrt 2}\begin{pmatrix}
+        \cancel{2} \\ \cancel{2} \ii
+    \end{pmatrix} 
+    =\Phi_2\\ 
+\end{align*}
+
+\subsection{}
+Zu zeigen $P_iP_j = \delta_{ij}$
+
+\begin{align*}
+    P_1P_1 &= 
+    \frac 12 \begin{pmatrix} 1 &-\ii \\ \ii & 1 \end{pmatrix} 
+        \frac 12 \begin{pmatrix} 1 & -\ii \\ \ii & 1 \end{pmatrix} \\
+                                   &= \frac 14 \begin{pmatrix} 2 & -2i \\ 2i & 2 \end{pmatrix} \\
+                                   &=\frac 12 \begin{pmatrix} 1 &-\ii \\ -\ii & 1 \end{pmatrix} \\
+                                   &=P_1
+    &...
+\end{align*}
+Zu zeigen: $\sum_\ii P_\ii = \mathbb{1}$
+\begin{align*}
+    P_1+P_2 &= \frac 12 \begin{pmatrix} 1 &-\ii \\ \ii & 1 \end{pmatrix} 
+        \frac 12 \begin{pmatrix} 1 & \ii \\ -\ii & 1 \end{pmatrix} \\
+                                   &= \frac 12 \begin{pmatrix} 2 & 0 \\ 0 & 2 \end{pmatrix} \\
+                                   &=\frac 12 \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} \\
+                                   &= \mathbb{1}
+\end{align*}
+
+\section{Vollständiger Satz von Operatoren}
+
+In einen dreidimensinalen Raum sind zwei Operatoren durch
+\[
+    H = \hbar\omega 
+    \begin{pmatrix}
+        1 & 0 & 0 \\
+        0 & 0 & 0 \\
+        0 & 0 & 1
+    \end{pmatrix}
+\]
+und
+\[
+    B = b
+    \begin{pmatrix}
+        0 & 0 & 1 \\
+        0 & 1 & 0 \\
+        1 & 0 & 0 
+    \end{pmatrix}
+\]
+
+\subsection{}
+$H$ ist hermitsch, da man es transponieren und komplex konjugieren kann ohne das es sich ändert. Bei $B$ müsste dafür gelten, dass $b$ reell ist.
+
+\subsection{}
+Um zu zeigen, dass $H$ und $B$ vertauschen muss gezeigt werden, dasss $[H,B] = 0$ gilt.
+\begin{align*}
+    [H,B] &= HB-BH \\
+          &= \hbar\omega b
+    \begin{pmatrix}
+        1 &0 &0 \\
+        0 &0 &0 \\
+        0 &0 &1 \\
+    \end{pmatrix}\begin{pmatrix}
+        0 &0 &1 \\
+        0 &1 &0 \\
+        1 &0 &0 \\
+    \end{pmatrix} 
+    -\hbar\omega b
+   \begin{pmatrix}
+        0 &0 &1 \\
+        0 &1 &0 \\
+        1 &0 &0 \\
+    \end{pmatrix} \begin{pmatrix}
+        1 &0 &0 \\
+        0 &0 &0 \\
+        0 &0 &1 \\
+    \end{pmatrix} \\
+    &= \hbar\omega b
+    \begin{pmatrix}
+        0 &0 &1 \\
+        0 &0 &0 \\
+        1 &0 &0 \\
+    \end{pmatrix} 
+    -\hbar\omega b
+    \begin{pmatrix}
+        0 &0 &1 \\
+        0 &0 &0 \\
+        1 &0 &0 \\
+    \end{pmatrix} \\
+    &= 0
+\end{align*}
+
+\subsection{}
+Als nächstes sollen drei Vektoren bestimmt werden, die sowohl von $H$ als auch von $B$ Eigenvektoren sind.
+
+Zunächst bestimme ich die Eigenwerte der beiden Matrizen um daraus die eigenräume zu bestimmen, aus denen ich gemeiame Vektoren ermittele.
+Die Eigenwerte ermittel ich mit $\text{det}(A-\lambda \mathbb{1})$. 
+Damit erhalte ich als Eigenwerte zu der Matrix von $H$ $\lambda_{1,2}=\hbar\omega$ und $\lambda_3=0$.
+Für die Matrix von $B$ erhalte ich ebenfalls einen doppelten Eigenwert $\lambda_{1,2}=b$ und einen einzelnen $\lambda_3=-b$.
+Nun bestimme ich die dazu gehörigen Eigenvektoren.
+
+$H$ hat zu den Eigenwert $\hbar\omega$ die Eigenvektoren $(1,0,0)^T$ und $(0,0,1)^T$ und zu den EW den EV $(0,1,0)^T$. Zu $B$ erhalte ich für $b$ die EV $(0,1,0^T$ und $(1,0,1)^T$ und für $-b$ $(1,0,-1)^T$.
+Damit erhält man als gemeinsame EV $(0,1,0)^T$, $(1,0,1)^T$ und $(1,0,-1)^T$.
+EW: $(0,b)$ , $(\hbar,b)$ und $(\hbar\omega,-b)$.
+
+\subsection{}
+Die EW $\lambda_{H,i}$ reichen nicht aus um den Zustand $i$ eindeutig zu bestimmen. Jeder Zustand $a(1,0,0,)^T+b(0,0,1)^T$ mit $a,b \in \mathbb R $ gehört zum EW $\hbar\omega$. Hingegen wissen wir, das zum EW $0$ $i=(0,1,0)^T$ sein muss.
+
+Die Paaren von EW $(\lambda_{H,i},\lambda_{B,i})$ reichen aus um den Zustand $i$ eindeutig zu bestimmen. Ist nun z.B. $\lambda_{H,i} =\lambda_\omega$ so wissen wir, weil es sich um einen EV von $B$ handelt, das entweder $i=(1,0,1)^T$ oder $i=(1,0,-1)^T$. Diese haben verschiedene EW von $B$: $b$ und $-b$. Beide EW zusammen reichen somit aus um $i$festzulegen. $\implies {H,B}$ vollständiger Satz.
+
+\subsection{}
+\[
+    B'=b\begin{pmatrix}
+        0 &0 &0 \\
+        0 &1 &0 \\
+        0 &0 &0
+    \end{pmatrix}
+\]
+Hierfür erhalte ich die EW $0$ (doppelt) und $b$ und daraus die EV $(1,0,0)^T$, $(0,0,1)^T$ und für $b$ $(0,1,0)^T$
+Somit haben $B'$ und $H$ degenerierten Eigenraum (von $(1,0,0,^T$ und $(0,0,1)$ aufgespannt).
+Deswegen wird der Zustand durch diese EV auch nicht eindeutig estgelegt. $\implies$ kein vollständiger Satz.
+
+\section{Heisenbergdarstellung von Operatoren}
+\subsection{}
+Zu zeigen:
+$[A^n,B] = nA^{n-1}[A,B]$ falls $[A,B] = c \in \mathbb C$
+Induktionsanfang: $n=1$
+\[
+    [A,B] = 1A^0[A,B]
+\]
+Induktionsschritt: angenommen die Behauptung gilt für n: zu zeigen $[A^{n+1},B] = (n+1)A^n[A,B]$
+\begin{align*}
+    \implies [A^{n+1},B] &= A^{n+1}B-BA^{n+1} \\
+                         &= A^{n+1}B-A^nBA+A^nBA-BA^{n+1} \\
+                         &= A^n[A,B]+[A^n,B]A \\
+                         &= cA^n+nA^{n-1}cA \\
+                         &= (n+1)A^nc \\
+                         &= (n+1)A^n[A,B]
+\end{align*}
+
+\subsection{}
+Zu zeigen $[H,p] \in\mathbb C$ mit $H = p^2/2m-qE_x$:
+\begin{align*}
+    [H,p] &= [\frac{p^2}{2m}-qE_x,p] \\
+          &= -qE\underbrace{[x,p]}_{i\hbar} \qquad|\text{ da }[p,p]=0 \\
+          &= -i\hbar qE \in\mathbb C
+\end{align*}
+
+\subsection{}
+Zu zeigen: $\hat{p_H}(t) = \hat{p_H}(0)+qE+\hat{e_x}$ mit $H=\hat{p^2}/2m-qE_x$
+\begin{align*}
+    \hat{p_H}(t) &= \ee^{\ii Ht/\hbar}\hat{p}\ee^{-\ii Ht/\hbar} \\
+                 &= sum^\infty_{n=0}\frac 1{n!}\\del{\frac i\hbar}^nt^nH^n\hat p\ee^{\ii Ht/\hbar} \\
+                 &= \sum^\infty_{n=0} \frac 1{(n-0)!}\del{\frac i\hbar t}^{n-1}H^{n-1}\del{\frac i\hbar t}(-\ii\hbar qE\hat{e_x})+\hat p \\
+                 &= \hat p + qE+\hat{e_x} \\
+                 &=\hat{p_H}(0)+qE+\hat{e_x}
+\end{align*}
+
+
+    
+
+
+
 \end{document}
