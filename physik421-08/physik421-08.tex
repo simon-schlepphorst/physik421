@@ -272,8 +272,38 @@ Zu zeigen: $\hat p_H(t) = \hat p_H(0)+qE+\hat e_x$ mit $H=\hat p^2/2m-qE_x$
 \end{align*}
 
 
-    
 
+
+\section{Zeitentwicklung der Matrix-Darstellung von Operatoren im Wechselwirkungsbild}
+
+Gegeben ist ein Operator $\vec{q}_I$ im Wechselwirkungsbild. Es soll gezeigt werden, dass die Zeitableitung gegeben ist durch:
+\[
+	\ii\hbar\dod{}{t}\vec{q}_I=\ii\hbar\dpd{}{t}\vec{q}_I+\left[\vec{H}_0,\vec{q}_I\right]
+\]
+
+Im Wechselwirkungsbild benutzt man den Hamilton-Operator $H=H_0+H_1$, wobei $H_0$ das Wechelwirkungsfreihe System und $H_1$ die Wechselwirkung beschreiben. Dabei gilt für die Wellenfunktion $\Psi_I$ im Wechselwirkungsbild (Nolting, Seite 221):
+\begin{align*}
+	\ket{\Psi_I\del{t}}=U_0\del{t_0,t}\ket{\Psi\del{t}}&&\text{mit }U_0\del{t_0,t}=\ee^{\frac{\ii}{\hbar}\vec{H}_0\del{t-t_0}}
+\end{align*}
+Soll nun eine Observable A in das Wechselbild transformiert werden folgt:
+\begin{align*}
+	\braopket{\Psi}{A}{\Psi}&=\braopket{\Psi}{U_0\del{t_0,t}U_0^{-1}\del{t_0,t}AU_0\del{t_0,t}U_0^{-1}\del{t_0,t}}{\Psi}\\
+	&=\braopket{\Psi_I}{U_0^{-1}\del{t_0,t}AU_0\del{t_0,t}}{\Psi_I}\\
+\end{align*}
+Der transformierte Operator $A_I$ ist also $U_0^{-1}\del{t_0,t}AU_0\del{t_0,t}$. Damit lässt sich nun die gewünschte Geleichung herleiten (zur Übersichtlichkeit lasse ich die $\del{t_0,t}$-Abhängigkeit weg:
+\begin{align*}
+	\ii\hbar\dod{}{t}\vec{q}_I&=\ii\hbar\dod{}{t}\del{U_0^{-1}\vec{q}U_0}\\
+	&=\ii\hbar\dpd{U_0^{-1}}{t}\vec{q}U_0+\ii\hbar U_0^{-1}\dpd{\vec{q}}{t}U_0+\ii\hbar U_0^{-1}\vec{q}\dpd{U_0}{t}\\
+	\intertext{%
+		mit $\dpd{U_0}{t}=\frac{\ii}{\hbar}\vec{H}_0U_0$ und $\dpd{U_0^{-1}}{t}=-\frac{\ii}{\hbar}U_0^{-1}\vec{H}_0$
+	}
+	&=\vec{H}_0U_0^{-1}\vec{q}U_0+\ii\hbar U_0^{-1}\dpd{\vec{q}}{t}U_0-U_0^{-1}\vec{q}U_0\vec{H}_0\\
+	\intertext{%
+		mit $\vec{q}_I=U_0\vec{q}U_0^{-1}$ und $\dpd{\vec{q}_I}{t}=U_0\dpd{\vec{q}}{t}U_0^{-1}$
+	}
+	&=\vec{H}_0\vec{q}_I-\vec{q}_I\vec{H}_0+\ii\hbar\dpd{\vec{q}_I}{t}\\
+	&=\left[\vec{H}_0,\vec{q}_I\right]+\ii\hbar\dpd{\vec{q}_I}{t}
+\end{align*}
 
 
 \end{document}
