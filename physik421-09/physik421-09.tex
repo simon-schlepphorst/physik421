@@ -118,7 +118,7 @@ Mit \eqref{eq:gedreht} erhalten wir für die beiden Vektoren
     \end{pmatrix} \\
     &= \begin{pmatrix}
     -\frac1{\sqrt2} \\
-    2 \\
+    -2 \\
     -\frac1{\sqrt2}
 \end{pmatrix} \\
     \vec b' &= \mat D \cdot \del{3,5,-4}^\text{T} \\
@@ -133,5 +133,39 @@ Mit \eqref{eq:gedreht} erhalten wir für die beiden Vektoren
     \frac7{\sqrt2}
 \end{pmatrix}
 \end{align*}
+
+\subsection{}
+
+Da gilt 
+\begin{align*}
+    \skp{\vec a}{\vec b} &= \abs a \cdot \abs b \dcos{\alpha},
+    \intertext{%
+        mit dem Winkel zwischen den Vektoren $\alpha$, und sowohl die Beträge der Vektoren, als auch der Winkel zwischen ihnen bei einer Drehung konstant bleiben, sollte das Skalarprodukt vor und nach der Drehung gleich sein. Dies Prüfen wir nun.
+    }
+    \skp{\vec a}{\vec b} &= \skp{\begin{pmatrix}
+    0 \\
+    -2 \\
+    1
+    \end{pmatrix}}{\begin{pmatrix}
+        3 \\
+        5 \\
+        -4
+    \end{pmatrix}} \\
+    &= 0 - 10 -4 \\
+    &= -14 \\
+    \skp{\vec a'}{\vec b'} &= \skp{\begin{pmatrix}
+    -\frac1{\sqrt2} \\
+    -2 \\
+    -\frac1{\sqrt2}
+    \end{pmatrix}}{\begin{pmatrix}
+    \frac1{\sqrt2} \\
+    5 \\
+    \frac7{\sqrt2}
+    \end{pmatrix}} \\
+    &= -\half - 10 - \frac72 \\
+    &= -14
+\end{align*}
+Unsere Vermutung ist somit bestätigt.
+
 
 \end{document}
