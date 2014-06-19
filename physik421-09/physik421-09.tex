@@ -179,5 +179,20 @@ Wie in der vorherigen Teilaufgabe schon erwähnt, ändern sich die Beträge der 
 \end{align*}
 Dies stimmt mit der Vermutung überein.
 
+\section{Quantenmechanischer Drehimpulsoperator}
+
+\subsection{}
+
+Es ist zu zeigen, dass der Drehimpulsoperator $\hat L = \hat X \times \hat P$ hermitesch ist, also dass gilt $\hat L^\dagger = \hat L$.
+\begin{align*}
+    \hat L_i &= \sum_{j=1}^3\sum_{k=1}^3 \epsilon_{ijk}\hat X_j \hat P_k 
+    \intertext{%
+        Da nur für $j\neq k$ das Levi-Civita-Symbol von null verschieden ist, kommutieren die entsprechenden Komponenten, und man kann schreiben
+    }
+             &= \sum_{j=1}^3\sum_{k=1}^3 \epsilon_{ijk}\hat P_k \hat X_j \\
+             &= \sum_{j=1}^3\sum_{k=1}^3 \epsilon_{ijk}\hat P_k^\dagger \hat X_j^\dagger \\
+             &= \sum_{j=1}^3\sum_{k=1}^3 \epsilon_{ijk}\del{\hat X_j\hat P_k}^\dagger \\
+             &= \hat L_i^\dagger.
+\end{align*}
 
 \end{document}
