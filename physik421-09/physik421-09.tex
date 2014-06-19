@@ -4,8 +4,6 @@
 \setcounter{thezettel}{9}
 \renewcommand\thesection{\arabic{thezettel}.\arabic{section}}
 
-\newcommand{\ui}[1]{\int_{-\infty}^{\infty}\dif {#1}\;}
-\newcommand\ccancel[2][black]{\renewcommand\CancelColor{\color{#1}}\cancel{#2}}
 
 
 \title{physik421 - Übung \arabic{thezettel}}
@@ -21,9 +19,91 @@
 Eine Drehmatrix erfüllt folgende Eigenschaften:
 \begin{itemize}
     \item
-        $\det(\mat{B}) = 1$
+        $\det(\mat{M}) = 1$
     \item
-        $\mathbf{B}\cdot\mathbf{B}^\text{T} = \mathbb{1}$
+        $\mathbf{M}\cdot\mathbf{M}^\text{T} = \mathbb{1}$
 \end{itemize}
+
+Da für die gegebene Matrix jedoch gilt
+\[
+    \det(\mat D) = \frac1{\sqrt{2}},
+\]
+in den folgenden Teilaufgaben jedoch davon ausgegangen wird, die Matrix sei eine Drehmatrix, gehe ich von folgender Matrix aus:
+\[
+    \mat D = \frac{1}{\sqrt{2}}
+    \begin{pmatrix}
+        -1 & 0 & -1 \\
+        0 & \sqrt2 & 0 \\
+        1 & 0 & -1
+    \end{pmatrix}.
+\]
+Für diese prüfe ich die oben genannten Eigenschaften.
+\begin{align*}
+    \det (\mat D) &= \del{\frac1{\sqrt{2}}}^3 \cdot
+    \begin{vmatrix}
+        -1 & 0 & -1 \\
+        0 & \sqrt2 & 0 \\
+        1 & 0 & -1
+    \end{vmatrix} \\
+    &= \del{\frac1{\sqrt{2}}}^3 \cdot\del{ - 0 \cdot 
+    \begin{vmatrix}
+        0 & 0 \\
+        1 & -1
+    \end{vmatrix} + \sqrt2 \cdot \begin{vmatrix}
+        -1 & -1 \\
+        1 & -1
+    \end{vmatrix} - 0 \cdot \begin{vmatrix}
+        -1 & -1 \\
+        0 & 0
+    \end{vmatrix}} \\
+    &= \del{\frac1{\sqrt{2}}}^2 \cdot
+    \begin{vmatrix}
+    -1 & -1 \\
+    1 & -1
+    \end{vmatrix} \\
+    &= \half \del{(-1)\cdot(-1)-1\cdot(-1)} \\
+    &= 1
+    \intertext{%
+        Damit wäre die erste Bedingung erfüllt.
+    }
+    \mat D \cdot \mat D^\text{T} &= \half
+    \begin{pmatrix}
+        -1 & 0 & -1 \\
+        0 & \sqrt2 & 0 \\
+        1 & 0 & -1
+    \end{pmatrix} \cdot
+    \begin{pmatrix}
+        -1 & 0 & 1 \\
+        0 & \sqrt2 & 0 \\
+        -1 & 0 & -1
+    \end{pmatrix} \\
+    &= \half
+    \begin{pmatrix}
+        1+1 & 0 & 1-1 \\
+        0 & 2 & 0 \\
+        1-1 & 0 1+1
+    \end{pmatrix} \\
+    &= \mathbb 1
+    \intertext{%
+        Beide Bedingungen sind erfüllt, es handelt sich also tatsächlich um eine Drehmatrix. Um nun herauszufinden, was sie für eine Drehung verursacht, lassen wir sie auf einen Vektor $\vec x$ wirken.
+    }
+    \mat D\cdot \vec x &= \frac 1{\sqrt2}
+    \begin{pmatrix}
+        -1 & 0 & -1 \\
+        0 & \sqrt2 & 0 \\
+        1 & 0 & -1
+    \end{pmatrix} \cdot
+    \begin{pmatrix}
+        x_1 \\
+        x_2 \\
+        x_3
+    \end{pmatrix}  \\
+    &= \begin{pmatrix}
+    \frac1{\sqrt2}\del{-x_1-x_3} \\
+    x_2 \\
+    \frac1{\sqrt2}\del{x_1-x_3} \mantag
+\end{pmatrix}.
+\end{align*}
+Da die zweite Komponente des Vektors durch die Drehung nicht verändert wird, handelt es sich ganz offensichtlich um eine Drehung um die $y$-Achse.
 
 \end{document}

@@ -27,8 +27,8 @@
 
 % Für \SIunit[]{} und \num in deutschem Stil
 
-% \usepackage[output-decimal-marker={,}]{siunitx}
-% \DeclareSIUnit\clight{\ensuremath{c}}
+ \usepackage[output-decimal-marker={,}]{siunitx}
+ \DeclareSIUnit\clight{\ensuremath{c}}
 
 % Schriftart und encoding
 
@@ -66,6 +66,7 @@
 % Für Befehl \cancel{}
 
 \usepackage{cancel}
+\newcommand\ccancel[2][black]{\renewcommand\CancelColor{\color{#1}}\cancel{#2}}
 
 % Für Links nach außen und innerhalb des Dokumentes
 
@@ -82,6 +83,10 @@
 
 % Verschiedene Mathematik-Hilfen
 
+% Manuelles taggen z.B. in align*-Umgebung
+
+\newcommand\mantag{\stepcounter{equation}\tag{\theequation}}
+
 \newcommand \e[1]{\cdot10^{#1}}
 \newcommand\p{\partial}
 
@@ -90,14 +95,21 @@
 
 \newcommand\skp[2]{\left\langle#1,#2\right\rangle}
 \newcommand\mw[1]{\left\langle#1\right\rangle}
+
+\newcommand \ee{\mathrm e}
 \newcommand \eexp[1]{\mathrm{e}^{#1}}
 \newcommand \dexp[1]{\exp\left({#1}\right)}
+
+% Trigonometrische Funktionen mit Argument in Klammern
+
 \newcommand \dsin[1]{\sin\left({#1}\right)}
 \newcommand \dcos[1]{\cos\left({#1}\right)}
 \newcommand \dtan[1]{\tan\left({#1}\right)}
 \newcommand \darccos[1]{\arccos\left({#1}\right)}
 \newcommand \darcsin[1]{\arcsin\left({#1}\right)}
 \newcommand \darctan[1]{\arctan\left({#1}\right)}
+
+\newcommand{\ui}[1]{\int_{-\infty}^{\infty}\dif {#1}\;}
 
 % Für fette, serifenlose Matrix
 
@@ -113,7 +125,6 @@
 
 %Für komplexe Zahlen
 
-\newcommand \ee{\mathrm e}
 \newcommand \ii{\mathrm i}
 \renewcommand{\Im}{\mathop{{}\mathrm{Im}}\nolimits}
 \renewcommand{\Re}{\mathop{{}\mathrm{Re}}\nolimits}
