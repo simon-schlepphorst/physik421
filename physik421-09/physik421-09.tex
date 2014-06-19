@@ -101,9 +101,37 @@ Für diese prüfe ich die oben genannten Eigenschaften.
     &= \begin{pmatrix}
     \frac1{\sqrt2}\del{-x_1-x_3} \\
     x_2 \\
-    \frac1{\sqrt2}\del{x_1-x_3} \mantag
+    \frac1{\sqrt2}\del{x_1-x_3} \mantag \label{eq:gedreht}
 \end{pmatrix}.
 \end{align*}
 Da die zweite Komponente des Vektors durch die Drehung nicht verändert wird, handelt es sich ganz offensichtlich um eine Drehung um die $y$-Achse.
+
+\subsection{}
+
+Mit \eqref{eq:gedreht} erhalten wir für die beiden Vektoren
+\begin{align*}
+    \vec a' &= \mat D \cdot \del{0,-2,1}^\text{T} \\
+            &= \begin{pmatrix}
+    \frac{1}{\sqrt{2}}\cdot\del{-0 - 1} \\
+    -2 \\
+    \frac{1}{\sqrt{2}}\cdot\del{0 - 1}
+    \end{pmatrix} \\
+    &= \begin{pmatrix}
+    -\frac1{\sqrt2} \\
+    2 \\
+    -\frac1{\sqrt2}
+\end{pmatrix} \\
+    \vec b' &= \mat D \cdot \del{3,5,-4}^\text{T} \\
+            &= \begin{pmatrix}
+    \frac1{\sqrt2}\cdot\del{-3+4} \\
+        5 \\
+        \frac1{\sqrt{2}}\del{3+4}
+    \end{pmatrix} \\
+    &= \begin{pmatrix}
+    \frac1{\sqrt2} \\
+    5 \\
+    \frac7{\sqrt2}
+\end{pmatrix}
+\end{align*}
 
 \end{document}
