@@ -236,4 +236,21 @@ X_kX_m\p_l\p_n - X_m\del{\p_nX_k}\p_l - X_mX_k\p_n\p_l}.
 \end{align*}
 Die Kommutatorrelation ist somit bewiesen.
 
+\subsection{}
+
+Zunächst ist zu zeigen, dass $\sbr{L_i,X_j} = \ii\hbar\epsilon_{ijk}X_k$ gilt.
+\begin{align*}
+    \sbr{L_i,X_j} &= \epsilon_{ikl}X_kP_lX_j-X_j\epsilon_{ikl}X_kP_l \\
+                  &= \frac\hbar\ii\epsilon_{ikl}\del{X_k\p_lX_j-X_jX_k\p_l} \\
+                  &= \frac\hbar\ii\epsilon_{ikl}\del{X_k\p_l\del{X_j}+X_kX_j\p_l-X_jX_k\p_l}.
+    \intertext{%
+        Mit $\p_l\del{X_j} = \delta_{lj}$ und $\sbr{X_k,X_j}=0$ erhalten wir
+    }
+    &= \frac\hbar\ii\epsilon_{ikj}X_k \\
+    &= \ii\hbar \epsilon_{ijk}X_k.
+    \intertext{%
+        Nun soll gezeigt werden, dass $\sbr{L_i,P_j}=\ii\hbar\epsilon_{ijk}P_k$ gilt.
+    }
+\end{align*}
+
 \end{document}
