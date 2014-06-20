@@ -195,4 +195,45 @@ Es ist zu zeigen, dass der Drehimpulsoperator $\hat L = \hat X \times \hat P$ he
              &= \hat L_i^\dagger.
 \end{align*}
 
+\subsection{}
+
+Die Kommutatorrelation $\sbr{\hat L_i, \hat L_j} =
+\ii\hbar\sum_{k=1}^3\epsilon_{ijk}\hat L_k$ soll bestätigt werden. Um den
+Beweis übersichtlicher zu gestalten, verwenden wir die Einsteinsche
+Summenkonvention, nach der über mehrfach auftauchende Indizes summiert wird.
+Zudem lassen wir die Hüte auf den Operatoren weg.
+\begin{align*}
+    \sbr{L_i, L_j} &= \sbr{\epsilon_{ikl}X_kP_l, \epsilon_{jmn}X_mP_n} \\
+                   &= \epsilon_{ikl}X_kP_l\epsilon_{jmn}X_mP_n - \epsilon_{jmn}X_mP_n\epsilon_{ikl}X_kP_l \\
+                   &=  \epsilon_{ikl}\epsilon_{jmn}\del{X_kP_lX_mP_n - X_mP_nX_kP_l}. 
+    \intertext{%
+        In Ortskoordinaten lautet der Impulsoperator $P_n = \frac\hbar\ii\p_n$,
+        wobei $\p_n = \dpd{}{X_n}$. Setzen wir dies ein erhalten wir
+    }
+    &= -\hbar^2\epsilon_{ikl}\epsilon_{jmn}\del{X_k\p_l\del{X_m\p_n} -
+X_m\p_n\del{X_k\p_l}} \\
+    &= -\hbar^2\epsilon_{ikl}\epsilon_{jmn}\del{X_k\del{\p_lX_m}\p_n +
+X_kX_m\p_l\p_n - X_m\del{\p_nX_k}\p_l - X_mX_k\p_n\p_l}.
+    \intertext{%
+       Da nun die $X$-Komponenten vertauschen und ebenso die Ableitungen,
+       erhalten wir
+   }
+    &= -\hbar^2\epsilon_{ikl}\epsilon_{jmn}
+   \del{X_k\underbrace{\del{\p_lX_m}}_{=\delta_{lm}}\p_n -
+   X_m\underbrace{\del{\p_nX_k}}_{=\delta_{nk}}\p_l } \\
+   &= -\hbar^2\epsilon_{ikl}\epsilon_{jln}X_k\p_n + \hbar^2\epsilon_{ikl}\epsilon_{jmk}X_m\p_l \\
+   &= \hbar^2\epsilon_{ikl}\epsilon_{jnl}X_k\p_n - \hbar^2\epsilon_{ilk}\epsilon_{jmk}X_m\p_l \\
+   &= \hbar^2X_k\p_n\del{\delta_{ij}\delta_{kn} - \delta_{in}\delta_{jk}} - \hbar^2X_m\p_l\del{\delta_{ij}\delta_{lm} - \delta_{im}\delta_{jl}}.
+   \intertext{%
+       Nun benennen wir die Indizes $k$ und $n$ um: $k \to m$ und $n\to l$.
+   }
+   &= \hbar^2X_m\p_l\del{\delta_{ij}\delta_{ml} - \delta_{il}\delta_{jm}} - \hbar^2X_m\p_l\del{\delta_{ij}\delta_{lm} - \delta_{im}\delta_{jl}} \\
+   &= -\hbar^2 \del{\delta_{il}\delta_{jm}-\delta_{im}\delta_{jl}}X_m\p_l \\
+   &= -\hbar^2 \epsilon_{ijk}\epsilon_{lmk}X_m\p_l \\
+   &= -\ii\hbar \epsilon_{ijk}\epsilon_{lmk}X_mP_l \\
+   &= \ii\hbar \epsilon_{ijk}\epsilon_{kml}X_mP_l \\
+   &= \ii\hbar \epsilon_{ijk} L_k
+\end{align*}
+Die Kommutatorrelation ist somit bewiesen.
+
 \end{document}
