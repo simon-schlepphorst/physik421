@@ -247,10 +247,93 @@ Zunächst ist zu zeigen, dass $\sbr{L_i,X_j} = \ii\hbar\epsilon_{ijk}X_k$ gilt.
         Mit $\p_l\del{X_j} = \delta_{lj}$ und $\sbr{X_k,X_j}=0$ erhalten wir
     }
     &= \frac\hbar\ii\epsilon_{ikj}X_k \\
-    &= \ii\hbar \epsilon_{ijk}X_k.
+    &= \ii\hbar \epsilon_{ijk}X_k. \tag*{$\square$}
     \intertext{%
         Nun soll gezeigt werden, dass $\sbr{L_i,P_j}=\ii\hbar\epsilon_{ijk}P_k$ gilt.
     }
+    \sbr{L_i,P_j} &= \epsilon_{ikl}X_kP_lP_j - P_j\epsilon_{ikl}X_kP_l \\
+                  &= -\hbar^2\epsilon_{ikl}\del{X_k\p_l\p_j - \p_jX_k\p_l} \\
+                  &= -\hbar^2\epsilon_{ikl}\del{X_k\p_l\p_j - \p_j\del{X_k}\p_l - X_k\p_j\p_l}.
+    \intertext{%
+        Mit $\sbr{\p_l,\p_j} = 0$ und $\p_j\del{X_k} = \delta_{jk}$ erhalten wir
+    }
+    &= \hbar^2\epsilon_{ijl}\p_l \\
+    &= -\ii\hbar\epsilon_{ijl}P_l.\tag*{$\cancel{\square}$}
+    \intertext{%
+        Dies ist irgendwie nicht ganz richtig\dots\newline
+        Nun wollen wir die Kommutatorrelation $\sbr{L,X^2}=0$ bestätigen. Da
+        der Drehimpulsoperator vektorwertig ist, $X^2$ jedoch ein Skalar, muss
+        für jede Komponente von $L$ gelten $\sbr{L_i,X_1^2+X_2^2+X_3^2}=0$. Dafür berechnen wir zunächst den Kommutator von $L_i$ mit $X_j^2$.
+    }
+    \sbr{L_i,X_j^2} &= \epsilon_{ikl} \del{X_kP_lX_j^2-X_j^2PX_kP_l} \\
+                    &= \frac\hbar\ii\epsilon_{ikl} \del{X_k\p_lX_j^2-X_j^2X_k\p_l} \\
+                    &= \frac\hbar\ii\epsilon_{ikl} \del{X_k\p_l\del{X_j^2}+X_kX_j^2\p_l - X_j^2X_k\p_l}.
+    \intertext{%
+        Mit $\sbr{X_k,X_j^2}=0$ und $\p_l\del{X_j^2}=2X_j\delta_{jl}$ erhalten wir
+    }
+    &= -\ii\hbar\epsilon_{ikj}2X_kX_j \\
+    &= 2\ii\hbar\epsilon_{ijk}X_kX_j.
+    \intertext{%
+        Nun schauen wir uns den gesamten Kommutator an.
+    }
+    \sbr{L_i,X_1^2+X_2^2+X_3^2} &= \sbr{L_i, X_1^2} + \sbr{L_i, X_2^2} + \sbr{L_i, X_3^2} \\
+                                &= 2\ii\del{\epsilon_{i1k}X_kX_1 + \epsilon_{i2k}X_kX_2 + \epsilon_{i3k}X_kX_3}.
+    \intertext{%
+        Sein nun o.B.d.A $i=1$. Dann gilt
+    }
+    &= 2\ii\del{\underbrace{\epsilon_{11k}X_kX_1}_{=0} + \underbrace{\epsilon_{12k}X_kX_2}_{\implies k=3} + \underbrace{\epsilon_{13k}X_kX_2}_{\implies k=2}} \\
+    &= 2\ii\del{\epsilon_{123}X_3X_2 + \epsilon_{132}X_2X_3} \\
+    &= 2\ii\del{X_3X_2 - X_2X_3} \\
+    &= 0. \tag*{$\square$}
+    \intertext{%
+        Da dies für jede Komponente von $L$ gilt, verschwindet auch der Kommutator $\sbr{L,X^2}$.\newline
+        Als nächstes zeigen wir $\sbr{L,P^2}=0$. Auch hier fangen wir Komponentenweise an:
+    }
+    \sbr{L_i,P_j^2} &= \epsilon_{ikl}\del{X_kP_lP_j^2 - P_j^2X_kP_l} \\
+                    &= \ii\hbar^3\epsilon_{ikl}\del{X_k\p_l\p_j^2 - \p_j^2X_k\p_l} \\
+                    &= \ii\hbar^3\epsilon_{ikl}\del{X_k\p_l\p_j^2 - \p_j\del{\delta_{jk}\p_l + X_k\p_j\p_l}} \\
+                    &= \ii\hbar^3\epsilon_{ikl}\del{X_k\p_l\p_j^2 - \p_j\del{X_k}\p_j\p_l - X_k\p_j^2\p_l} .
+    \intertext{%
+        Da gilt $\sbr{\p_l,\p_j^2}=0$ erhalten wir
+    }
+    &= -\ii\hbar^3\epsilon_{ilj}\p_j\p_l.
+    \intertext{%
+        Dann schauen wir uns wieder den gesamten Kommutator an.
+    }
+    \sbr{L_i,P_1^2+P_2^2+P_3^2} &= \sbr{L_i,P_1^2} + \sbr{L_i,P_2^2} + \sbr{L_i,P_3^2} \\
+                                &= -\ii\hbar^3\del{\epsilon_{il1}\p_1\p_l + \epsilon_{il2}\p_2\p_l + \epsilon_{il3}\p_3\p_l}.
+    \intertext{%
+        Sei nun o.B.d.A. $i=1$.
+    }
+    &= -\ii\hbar^3\del{\underbrace{\epsilon_{1l1}\p_1\p_l}_{=0} + \underbrace{\epsilon_{1l2}\p_2\p_l}_{\implies l=3} + \underbrace{\epsilon_{1l3}\p_3\p_l}_{\implies l=2}} \\
+    &= -\ii\hbar^3\del{\epsilon_{132}\p_2\p_3 + \epsilon_{123}\p_3\p_2} \\
+    &= -\ii\hbar^3\del{-\p_2\p_3 + \p_3\p_2} \\
+    &= 0. \tag*{$\square$}
+    \intertext{%
+        Da dies für jede Komponente von $L$ gilt, verschwindet auch der Kommutator $\sbr{L,P^2}$.\newline
+        Zu guter letzt bestätigen wir noch, dass $\sbr{L,\skp{X}{P}}=0$ gilt. Wir gehen hier analog zu den anderen Skalarprodukten vor.
+    }
+    \sbr{L_i,X_jP_j} &= \epsilon_{ikl}\del{X_kP_lX_jP_j-X_jP_jX_kP_l} \\
+                     &= -\ii\hbar^2\epsilon_{ikl}\del{X_k\p_lX_j\p_j-X_j\p_jX_k\p_l} \\
+                     &= -\ii\hbar^2\epsilon_{ikl}\del{X_k\p_l\del{X_j}\p_j+X_kX_j\p_l\p_j - X_j\p_j\del{X_k}\p_l - X_jX_k\p_j\p_l}.
+    \intertext{%
+        Mit $\sbr{X_i,X_j}=\sbr{P_i,P_j}=0$ und den oben schon mehrfach verwendeten Kronecker-Deltas erhalten wir
+    }
+    &= -\ii\hbar^2\del{\epsilon_{ikj}X_k\p_j - \epsilon_{ijl}X_j\p_l} \\
+    \sbr{L_i,X_1P_1 + X_2P_2 + X_3P_3} &= -\ii\hbar^2\del{\epsilon_{ik1}X_k\p_1-\epsilon_{i1l}X_1\p_l + \epsilon_{ik2}X_k\p_2-\epsilon_{i2l}X_2\p_l + \epsilon_{ik3}X_k\p_3-\epsilon_{i3l}X_3\p_l}.
+    \intertext{%
+        Nun setzen wir wieder o.B.d.A. $i=1$. Wir erhalten
+    }
+    &= -\ii\hbar^2\del{\underbrace{\epsilon_{1k1}X_k\p_1 -
+    \epsilon_{11l}X_1\p_l}_{=0} + \underbrace{\epsilon_{1k2}X_k\p_2 -
+\epsilon_{12l}X_2\p_l}_{\implies k=l=3} + \underbrace{\epsilon_{1k3}X_k\p_3 -
+\epsilon_{13l}X_3\p_l}_{\implies k=l=2}} \\
+    &= -\ii\hbar^2\del{\epsilon_{132}X_3\p_2 - \epsilon_{123}X_2\p_3 +
+    \epsilon_{123}X_2\p_3 - \epsilon_{132}X_3\p_2} \\
+    &= 0. \tag*{$\square$}
 \end{align*}
+
+Auch hier gilt, da der Kommutator für jede Komponente von $L$ verschwindet,
+gilt dies auch für $L$.
 
 \end{document}
