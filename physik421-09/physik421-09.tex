@@ -350,4 +350,21 @@ Aus Abschnitt~\ref{ssec:L_iL_j} folgt
                     &= \frac1{\ii\hbar}\epsilon_{ijk} \del{L_iAL_j - L_jAL_i - L_iAL_j + L_jAL_i} \\
         &= 0. \tag*{$\square$}
     \end{align*}
+    
+\section{Drehimpulsoperator als Generator einer Drehung}
+
+Es soll gezeigt werden dass der Rotationsoperator $\ee^{\ii\alpha\hat L_3 / \hbar}$ auf den Operator $\vec X$ angewandt eine Drehung um die $z$-Achse ist.
+\begin{align*}
+ \vec X' &= \ee^{\ii\alpha L_3 /\hbar} \vec X \ee^{-\ii\alpha L_3 /\hbar}\\
+ &= \sum_{n=0}^\infty \frac1{n!} \sbr{\frac{\ii}{\hbar} \alpha L_3, \vec X}_n\\
+ &= \sum_{n=0}^\infty \frac1{n!} \sbr{L'_3, \vec X}_n\\
+ \intertext{%
+  Mit $\sbr{A,B}_m = \sbr{A, \sbr{A,B}_{m-1}}$ und $\sbr{A,B}_0 = B$ ergibt sich:
+  }
+ &= \vec X + \sbr{L'_3, \vec X} + \sum_{n=2}^\infty \frac1{n!} \sbr{L'_3, \vec X}
+ &= \vec X + \ldots
+\end{align*}
+Es bliebe zu klären, wie $\sbr{A_i,\vec B}$ definiert sein soll.
+
+
 \end{document}
