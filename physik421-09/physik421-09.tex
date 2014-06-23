@@ -350,4 +350,62 @@ Aus Abschnitt~\ref{ssec:L_iL_j} folgt
                     &= \frac1{\ii\hbar}\epsilon_{ijk} \del{L_iAL_j - L_jAL_i - L_iAL_j + L_jAL_i} \\
         &= 0. \tag*{$\square$}
     \end{align*}
+
+\section{Eigenzustand zu $\vec{\hat{J^2}}$ und $\hat{J_3}$}
+Es ist die Standartbasis $|j,m>$ von Drehimpuleingenzuständen bezogen auf die Operatoren $\vec{\hat{J^2}}$ und $\hat{J_z}$
+
+\subsection{}
+Es sollen die Drehimpulskomponenten $\hat{J_x}$ und $\hat{J_y}$ durch die Auf- und Absteigeoperatoren ausgedrückt werden.
+
+\begin{align*}
+    J_- &= J_x-\ii J_y \qquad \implies J_x= J_- +iJ_y \\
+    J_+ &= J_x+\ii J_y \\
+    &\implies J_+ = J_-+2\ii J_y \\
+    &\implies J_y = \frac{-\ii}{2}(J_+-J_-) \qquad |\text{ eingesetzt in }J_x\\
+    J_x &= J_-+\frac{J_+-J_-}{2} \\
+        &= \frac{J_++J_-}{2}
+\end{align*}
+
+Als nächstes soll gezeigt werden, dass $\frac 12(\hat{J_+}\hat{J_-}+\hat{J_-}\hat{J_+}=\hat{\vec{J^2}}-\hat{\vec{J_z^2}}$
+
+\begin{align*}
+    \frac 12(\hat{J_+}\hat{J_-}+\hat{J_-}\hat{J_+} &= \frac 12\del{(J_x^2-\ii J_xJ_y+\ii J_yJ_x+J_y^2)+(J_x^2+\ii J_xJ_y-\ii J_yJ_x+J_y^2)} \\
+                                                   &=(J_x^2+J_y^2) \\
+                                                   &=(J^2-J_z^2)
+\end{align*}
+
+Nun soll gezeigt werden, dass $<\hat{J_x}>=<j,m|\hat{J_x}|j,m> = 0$ und $<\hat{J_x^2}>=1/2(j(j=1)-M^2)\hbar$
+
+\begin{align*}
+    <\hat{J_x}> &=<j,m|\hat{J_x}|j,m> \\
+                &= <j,m|\frac 12(J_++J_-)|j,m> \\
+                &= \frac 12(<j,m|J_+|j,m> + <j,m|J_-|j,m>) \\
+                &= \frac 12 (C_+\underbrace{<j,m|j,m+1>}_{=0}+C_-\underbrace{<j,m|j,m+1>}_{=0} \\
+                &=0
+\end{align*}
+
+\begin{align*}
+    <J_x^2> &= <j,m|J_x^2|j,m> \\
+            &= <j,m|\frac 14 (J_+^2+J_+J_-+J_-J_++J_-^2)|j,m> \\
+            &= <j,m|\frac 14 (\underbrace{J_+^2}_{=0}+J_+J_-+J_-J_++\underbrace{J_-^2}_{=0})|j,m> \\
+            &= <j,m|(\frac 12(J^2-J_z^2))|j,m> \\
+            &= \frac 12 (<j,m|J^2|j,m> - <j,m|J_z^2|j,m> \\
+            &= \frac 12\hbar (j(j+1)-m^2)
+\end{align*}
+
+\subsection{}
+Wann ist $(\delta J_x)^2$ minimal?
+
+\[
+    (\delta J_x)^2 = <j_x^2>-<J_x>^2 = \frac 12\hbar (j(j+1)-j^2)
+\]
+
+Der kleinste Wert wird für $m = \pm j$ erreicht, also $ \frac 12\hbar (j(j+1)-m^2)=\frac 12\hbar j$
+
+\subsection{}
+Als gemeinsamer Zustand kommt nur $|00>$ in frage, da eben gezeigt wurde das $j=0$ sein muss, damit eine Vertauschunig möglich ist. Aus $j=0$ folgt auch $m=0$.
+
+
+
+
 \end{document}
