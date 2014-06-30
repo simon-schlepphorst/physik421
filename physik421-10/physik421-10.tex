@@ -12,4 +12,62 @@
 \begin{document}
 \maketitle
 
+\section{}
+
+\section{}
+
+\section{}
+
+\section{}
+
+\subsection{}
+Es soll gezeigt werden, dass für die Quantenzahl j nur die Werte $l + (1/2)$ und
+$l - (1/2)$ möglich sind.
+\begin{align*}
+ \abs{l-\frac12} &\leq j \leq l + \frac12\\
+ l = 0 &\implies j = \frac12\\
+ l \geq 1 &\implies j = 1 + \frac12, 1 -\frac12
+\end{align*}
+
+\subsection{}
+Beweis durch vollständige Induktion, beginnend mit $\ket{l + 1/2 m_j}$.\\
+Für $m_j = l + 1/2$ gilt:
+\begin{align*}
+ \ket{l + \frac12 \;\; l + \frac12} = \ket{ll}\ket{+} &&\text{mit } \ket{+} = \ket{\frac12 \frac12}
+\end{align*}
+Für $m_j = l -(1/2)$ gilt dann:
+\begin{align*}
+ \ket{l + \frac12 \;\;l - \frac12} = \sqrt{\frac{2l}{2l + 1}} \ket{ll-1}\ket{+} + \sqrt{\frac1{2l+1}}\ket{ll}\ket{-}
+\end{align*}
+Vorausgesetzt die Formel ist korrekt, dann gilt für $m_j - 1$:
+\begin{align*}
+ J_- = &L_- + S_-\\
+ J_-\ket{l+1/2m_j} = &\hbar\sqrt{\del{l+1/2+m_j}\del{l+1/2-m_j+1}} \ket{l+1/2m_j-1}\\ \\
+ J_-\ket{lm_j-\frac12}\ket{+} = &\hbar\ket{lm_j - \frac12}\ket{-} + \hbar\sqrt{\del{l+m_j-\frac12}\del{l-m_j+\frac32}}\ket{lm_j-\frac32}\ket{+}\\
+ J_-\ket{lm_j+\frac12}\ket{-} = &\hbar\sqrt{\del{l+m_j+\frac12}\del{l-m_j+\frac12}}\ket{lm_j}\ket{-}
+ \intertext{%
+  Daraus folgt:}
+ \ket{l+\frac12\;\;m_j-1} = &\ket{lm_j - \frac12}\ket{-}\cbr{\sqrt{\frac1{\del{2l+1}\del{l-m_j+3/2}}} + \frac{l-m_j+1/2}{\sqrt{(2l+1)\del{l-m_j+3/2}}}}\\
+ &+ \sqrt{\frac{l+m_j-1/2}{2l+1}} \ket{lm_j-\frac32}\ket{+}\\
+ = &\sqrt{\frac{l-m_j+3/2}{2l+1}}\ket{lm_j-\frac12}\ket{-} + \sqrt{\frac{l+m_j-1/2}{2l+1}} \ket{lm_j-\frac32}\ket{+}\\
+ \intertext{%
+  Die Relation für $\ket{l+1/2m_j}$ ist damit bewiesen.}
+ \intertext{%
+  Für den Zustand $\ket{l-1/2m_j}$ und $m_j = l-(1/2)$ gilt dann:}
+ \ket{l-\frac12 \;\; l -\frac12} = &\sqrt{\frac1{2l+1}}\ket{ll-1}\ket{+} - \sqrt{\frac{2l}{2l+1}}\ket{ll}\ket{-}\\
+ \intertext{%
+  Wir schließen von $m_j$ auf $m_j-1$}
+ J_-\ket{l-\frac12m_j} = &\hbar\sqrt{\del{l-\frac12+m_j}\del{l+\frac12-m_j}}\ket{l-\frac12\;\;m_j-1}\\
+ \\
+ J_-\ket{lm_j - \frac12}\ket{+} = &\hbar\ket{lm_j-\frac12}\ket{-} + \hbar\sqrt{\del{l+m_j-\frac12}\del{l-m_j+\frac32}}\ket{lm_j-\frac32}\ket{+}\\
+ J_-\ket{lm_j+\frac12}\ket{-} = &\hbar\sqrt{\del{l+m_j+\frac12}\del{l-m_j+\frac12}}\ket{lm_j-\frac12}\ket{-}\\
+ \intertext{%
+  Daraus folgt wieder:}
+ \ket{l-\frac12\;\; m_j-1} = &\sqrt{\frac1{(2l+1)\del{l+m_j-1/2}}}\ket{lm_j-\frac12}\ket{-} + \sqrt{\frac{l-m_j+3/2}{2l+1}}\ket{lm_j-\frac32}\ket{+}\\
+ &- \sqrt{\frac{\del{l+m_j+1/2}^2}{\del{2l+1}\del{l+m_j-1/2}}}\ket{lm_j-\frac12}\ket{-}\\
+ = &\sqrt{\frac{l-m_j+3/2}{2l+1}}\ket{lm_j-\frac32}\ket{+} - \sqrt{\frac{l+m_j-1/2}{2l+1}}\ket{lm_j-\frac12}\ket{-}
+\end{align*}
+Damit ist der Beweis vollständig.
+
+
 \end{document}
