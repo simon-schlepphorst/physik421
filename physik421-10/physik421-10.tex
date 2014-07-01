@@ -102,7 +102,10 @@ Hieraus folgen direkt die Eigenwerte: $\lambda_+ =1$ und $ \lambda_- = -1$. Nun 
 \end{align*}
 auch $\sigma_y$ besitzt also nicht die gleichen Eigenzustände, wie $\sigma_z$.
 
+\section{Lamor Präzession}
+
 \section{Zwei Spin-1/2 Teilchen}
+\subsection{}
 
 Es sollen die gemeinsamen Eigenzustände $\ket{S_1S_2;Sm_s}$ des
 Gesamtspinoperators $\hat S=\hat S_1+\hat S_2$, dessen $z$-Komponenten $\hat
@@ -130,5 +133,80 @@ Aus $\lambda = 2$ und $\lambda = 0$ erhalten wir:
 \end{align*}
 
 Dies ist unsere neue Basis.
+
+\subsection{}
+\begin{align*}
+ S^2 = \del{S_1 + S_2}^2 \implies S_1\cdot S_2 = \frac12\del{S^2 - S_1^2 - S_2^2}
+\end{align*}
+Die Eigenzustände $\ket{S_1 S_2; S m_S}$ sind gemeinsame Eigenzustände der Operatoren $S^2, S_z, S_1^2, S_2^2$ und damit auch zu $S_1\cdot S_2$:
+\begin{align*}
+ S_1S_2\ket{1m_S} &= \frac{\hbar^2}2 \del{2 - \frac34 - \frac34}\ket{lm_S} = \frac14\hbar^2\ket{1m_S}\\
+ \intertext{%
+  Eigenwert: $1/4 \hbar^2$}
+ S_1S_2\ket{00} &= \frac{\hbar^2}2 \del{0 - \frac34 - \frac34}\ket{00} = -\frac34\hbar^2\ket{00}\\
+ \intertext{%
+  Eigenwert: $-(3/4)\hbar^2$}
+\end{align*}
+
+\subsection{}
+$P$ ist hermitisch, da die Spinoperatoren $S_1$ und $S_2$ hermitisch sind und miteinander vertauschen. Ferner gilt:
+\begin{align*}
+ P\ket{1m_S} &= \del{\frac34 - \frac14} \ket{1m_S} = \ket{1m_S}\\
+ P\ket{00} &= \del{\frac34 - \frac34}\ket{00} = 0\\
+ \implies &P^2\ket{Sm_S} = P\ket{Sm_S}
+\end{align*}
+$P$ projeziert auf den Unterraum der Triplettzustände $\ket{1m_S}$.
+
+\section{Gesamtdrehimpuls des Elektrons}
+
+\subsection{}
+Es soll gezeigt werden, dass für die Quantenzahl j nur die Werte $l + (1/2)$ und
+$l - (1/2)$ möglich sind.
+\begin{align*}
+ \abs{l-\frac12} &\leq j \leq l + \frac12\\
+ l = 0 &\implies j = \frac12\\
+ l \geq 1 &\implies j = 1 + \frac12, 1 -\frac12
+\end{align*}
+
+\subsection{}
+Beweis durch vollständige Induktion, beginnend mit $\ket{l + 1/2 m_j}$.\\
+Für $m_j = l + 1/2$ gilt:
+\begin{align*}
+ \ket{l + \frac12 \;\; l + \frac12} = \ket{ll}\ket{+} &&\text{mit } \ket{+} = \ket{\frac12 \frac12}
+\end{align*}
+Für $m_j = l -(1/2)$ gilt dann:
+\begin{align*}
+ \ket{l + \frac12 \;\;l - \frac12} = \sqrt{\frac{2l}{2l + 1}} \ket{ll-1}\ket{+} + \sqrt{\frac1{2l+1}}\ket{ll}\ket{-}
+\end{align*}
+Vorausgesetzt die Formel ist korrekt, dann gilt für $m_j - 1$:
+\begin{align*}
+ J_- = &L_- + S_-\\
+ J_-\ket{l+1/2m_j} = &\hbar\sqrt{\del{l+1/2+m_j}\del{l+1/2-m_j+1}} \ket{l+1/2m_j-1}\\ \\
+ J_-\ket{lm_j-\frac12}\ket{+} = &\hbar\ket{lm_j - \frac12}\ket{-} + \hbar\sqrt{\del{l+m_j-\frac12}\del{l-m_j+\frac32}}\ket{lm_j-\frac32}\ket{+}\\
+ J_-\ket{lm_j+\frac12}\ket{-} = &\hbar\sqrt{\del{l+m_j+\frac12}\del{l-m_j+\frac12}}\ket{lm_j}\ket{-}
+ \intertext{%
+  Daraus folgt:}
+ \ket{l+\frac12\;\;m_j-1} = &\ket{lm_j - \frac12}\ket{-}\cbr{\sqrt{\frac1{\del{2l+1}\del{l-m_j+3/2}}} + \frac{l-m_j+1/2}{\sqrt{(2l+1)\del{l-m_j+3/2}}}}\\
+ &+ \sqrt{\frac{l+m_j-1/2}{2l+1}} \ket{lm_j-\frac32}\ket{+}\\
+ = &\sqrt{\frac{l-m_j+3/2}{2l+1}}\ket{lm_j-\frac12}\ket{-} + \sqrt{\frac{l+m_j-1/2}{2l+1}} \ket{lm_j-\frac32}\ket{+}\\
+ \intertext{%
+  Die Relation für $\ket{l+1/2m_j}$ ist damit bewiesen.}
+ \intertext{%
+  Für den Zustand $\ket{l-1/2m_j}$ und $m_j = l-(1/2)$ gilt dann:}
+ \ket{l-\frac12 \;\; l -\frac12} = &\sqrt{\frac1{2l+1}}\ket{ll-1}\ket{+} - \sqrt{\frac{2l}{2l+1}}\ket{ll}\ket{-}\\
+ \intertext{%
+  Wir schließen von $m_j$ auf $m_j-1$}
+ J_-\ket{l-\frac12m_j} = &\hbar\sqrt{\del{l-\frac12+m_j}\del{l+\frac12-m_j}}\ket{l-\frac12\;\;m_j-1}\\
+ \\
+ J_-\ket{lm_j - \frac12}\ket{+} = &\hbar\ket{lm_j-\frac12}\ket{-} + \hbar\sqrt{\del{l+m_j-\frac12}\del{l-m_j+\frac32}}\ket{lm_j-\frac32}\ket{+}\\
+ J_-\ket{lm_j+\frac12}\ket{-} = &\hbar\sqrt{\del{l+m_j+\frac12}\del{l-m_j+\frac12}}\ket{lm_j-\frac12}\ket{-}\\
+ \intertext{%
+  Daraus folgt wieder:}
+ \ket{l-\frac12\;\; m_j-1} = &\sqrt{\frac1{(2l+1)\del{l+m_j-1/2}}}\ket{lm_j-\frac12}\ket{-} + \sqrt{\frac{l-m_j+3/2}{2l+1}}\ket{lm_j-\frac32}\ket{+}\\
+ &- \sqrt{\frac{\del{l+m_j+1/2}^2}{\del{2l+1}\del{l+m_j-1/2}}}\ket{lm_j-\frac12}\ket{-}\\
+ = &\sqrt{\frac{l-m_j+3/2}{2l+1}}\ket{lm_j-\frac32}\ket{+} - \sqrt{\frac{l+m_j-1/2}{2l+1}}\ket{lm_j-\frac12}\ket{-}
+\end{align*}
+Damit ist der Beweis vollständig.
+
 
 \end{document}
