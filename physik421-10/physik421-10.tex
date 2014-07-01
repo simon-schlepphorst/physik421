@@ -12,4 +12,94 @@
 \begin{document}
 \maketitle
 
+\section{Spinmatrizen} % (fold)
+\label{sec:Spinmatrizen}
+
+Gegeben sind die drei Pauli-Matrizen
+\[
+\sigma_x = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} \qquad
+\sigma_y = \begin{pmatrix} 0 & -\ii \\ \ii & 0 \end{pmatrix} \qquad
+\sigma_z = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}
+\]
+\subsection{Eigenschaften} % (fold)
+\label{ssec:Eigenschaften}
+
+\begin{align*}
+    \sigma_x\sigma_y + \sigma_y\sigma_x &= 
+    \begin{pmatrix}0 & 1 \\ 1 & 0 \end{pmatrix}\begin{pmatrix} 0 & -\ii \\ \ii & 0 \end{pmatrix} + \begin{pmatrix} 0 & -\ii \\ \ii & 0 \end{pmatrix}\begin{pmatrix}0 & 1 \\ 1 & 0 \end{pmatrix} \\
+                     &= \begin{pmatrix} \ii & 0 \\ 0 & - \ii \end{pmatrix} + \begin{pmatrix} -\ii & 0 \\ 0 & \ii \end{pmatrix} \\
+                     &= 0 \\
+\sigma_x^2 &= \begin{pmatrix}0 & 1 \\ 1 & 0 \end{pmatrix}\begin{pmatrix}0 & 1 \\ 1 & 0 \end{pmatrix} \\
+           &= \mathbb{1} \\
+    \sigma_y^2 &=  \begin{pmatrix} 0 & -\ii \\ \ii & 0 \end{pmatrix} \begin{pmatrix} 0 & -\ii \\ \ii & 0 \end{pmatrix} \\
+               &= \mathbb{1} \\
+    \sigma_z^2 &= \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}\begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix} \\
+               &= \mathbb{1} \\
+    \sigma_x\sigma_y &= \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}\begin{pmatrix} 0 & -\ii \\ \ii & 0 \end{pmatrix} \\
+                     &= \begin{pmatrix} \ii & 0 \\ 0 & -\ii \end{pmatrix} \\
+                     &= \ii\begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix} \\
+                     &= \ii\sigma_z
+\end{align*}
+
+% subsection Eigenschaften (end)
+
+\subsection{Eigenzustände und Eigenwerte von $\sigma_z$} % (fold)
+
+Zunächst die Eigenwerte:
+\begin{align*}
+    && \det\del{\sigma_z - \lambda_{\pm}\mathbb 1} &= 0 &&\\
+\iff && \begin{vmatrix}1-\lambda_\pm & 0 \\ 0 & -1-\lambda_\pm \end{vmatrix} &= 0  \\
+    \iff && \del{1-\lambda_\pm}\del{-1-\lambda_\pm} &= 0 \\
+    \iff && \lambda_\pm^2 -1 &= 0. 
+\end{align*}
+Hieraus folgen direkt die Eigenwerte: $\lambda_+ =1$ und $ \lambda_- = -1$. Nun die Eigenzustände. Beginnen wir mit $\ket{+}$:
+\begin{align*}
+    && \sigma_z\ket{+} &= \lambda_+\ket{+} && \\
+\iff && \begin{pmatrix}1 & 0 \\ 0 & -1 \end{pmatrix} \ket{+} &= 1\ket{+}. \\
+\intertext{%
+    Hieraus folgt offensichtlich
+}
+&& \ket{+} &= \begin{pmatrix}1\\0\end{pmatrix}.
+\intertext{Nun $\ket{-}$:}
+    && \sigma_z\ket{-} &= \lambda_-\ket{-} && \\
+\iff && \begin{pmatrix}1 & 0 \\ 0 & -1 \end{pmatrix} \ket{-} &= -1\ket{-} \\
+\implies && \ket{-} &= \begin{pmatrix}0\\1\end{pmatrix}
+\end{align*}
+
+\subsection{Eigenwerte und Eigenzustände von $\sigma_x$ und $\sigma_y$} % (fold)
+
+\begin{align*}
+    && \det\del{\sigma_x - \lambda_{\pm}\mathbb 1} &= 0 &&\\
+\iff && \begin{vmatrix}-\lambda_\pm & 1 \\ 1 & -\lambda_\pm \end{vmatrix} &= 0  \\
+    \iff && \lambda_\pm^2 -1 &= 0 \\
+    \iff && \lambda_\pm^2  &= 1
+    \intertext{%
+        Es ergeben sich die gleichen Eigenwerte, wie für $\sigma_z$. Nun überprüfen wir, ob $\sigma_x$ auch die gleichen Eigenzustände besitzt:
+    }
+&&\sigma_x\begin{pmatrix}1\\0\end{pmatrix} &= \begin{pmatrix}0&1\\1&0\end{pmatrix}\begin{pmatrix}1\\0\end{pmatrix} \\
+&&&= \begin{pmatrix}0\\1\end{pmatrix} \\
+&&&\neq 1\cdot\begin{pmatrix}1\\0\end{pmatrix} \\
+&&\sigma_x\begin{pmatrix}0\\1\end{pmatrix} &= \begin{pmatrix}0&1\\1&0\end{pmatrix} \begin{pmatrix}0\\1\end{pmatrix} \\
+&&&= \begin{pmatrix}1\\0\end{pmatrix} \\
+&&&\neq -1\cdot\begin{pmatrix}0\\1\end{pmatrix},
+    \intertext{%
+        $\sigma_x$ hat demnach andere Eigenzustände als $\sigma_z$.\newline
+        Nun überprüfen wir $\sigma_y$:
+    }
+    && \det\del{\sigma_y - \lambda_{\pm}\mathbb 1} &= 0 &&\\
+\iff && \begin{vmatrix}-\lambda_\pm & -\ii \\ \ii & -\lambda_\pm \end{vmatrix} &= 0  \\
+    \iff && \lambda_\pm^2 -1 &= 0 \\
+    \iff && \lambda_\pm^2  &= 1
+    \intertext{%
+        Es ergeben sich die gleichen Eigenwerte, wie für $\sigma_z$. Nun überprüfen wir, ob $\sigma_y$ auch die gleichen Eigenzustände besitzt:
+    }
+&&\sigma_y\begin{pmatrix}1\\0\end{pmatrix} &= \begin{pmatrix}0&-\ii\\\ii&0\end{pmatrix} \begin{pmatrix}1\\0\end{pmatrix} \\
+&&&= \begin{pmatrix}0\\\ii\end{pmatrix} \\
+&&&\neq 1\cdot\begin{pmatrix}1\\0\end{pmatrix} \\
+&&\sigma_y\begin{pmatrix}0\\1\end{pmatrix} &= \begin{pmatrix}0&-\ii\\\ii&0\end{pmatrix} \begin{pmatrix}0\\1\end{pmatrix} \\
+&&&= \begin{pmatrix}-\ii\\0\end{pmatrix} \\
+&&&\neq -1\cdot\begin{pmatrix}1\\0\end{pmatrix},
+\end{align*}
+auch $\sigma_y$ besitzt also nicht die gleichen Eigenzustände, wie $\sigma_z$.
+
 \end{document}
