@@ -17,6 +17,7 @@
 \section{Lamor Präzession}
 
 \section{Zwei Spin-1/2 Teilchen}
+\subsection{}
 Es sollen die gemeinsamen Eigenzustände $\ket{S_1S_2;Sm_s}$ des Gesammtspinoperators $\hat S=\hat S_1+\hat S_2$, dessen $z$-Komponenten $\hat S_z$ und $\hat S_1^2$, $\hat S_2^2$.
 
 Wenn man $S^2$ in der Basis $\ket{++}$, $\ket{+-}$, $\ket{-+}$ und $\ket{--}$ ausdrückt, erhält man:
@@ -41,6 +42,28 @@ Aus $\lambda = 2$ und $\lambda = 0$ erhalten wir:
 
 Dies ist unsere neue Basis.
 
+\subsection{}
+\begin{align*}
+ S^2 = \del{S_1 + S_2}^2 \implies S_1\cdot S_2 = \frac12\del{S^2 - S_1^2 - S_2^2}
+\end{align*}
+Die Eigenzustände $\ket{S_1 S_2; S m_S}$ sind gemeinsame Eigenzustände der Operatoren $S^2, S_z, S_1^2, S_2^2$ und damit auch zu $S_1\cdot S_2$:
+\begin{align*}
+ S_1S_2\ket{1m_S} &= \frac{\hbar^2}2 \del{2 - \frac34 - \frac34}\ket{lm_S} = \frac14\hbar^2\ket{1m_S}\\
+ \intertext{%
+  Eigenwert: $1/4 \hbar^2$}
+ S_1S_2\ket{00} &= \frac{\hbar^2}2 \del{0 - \frac34 - \frac34}\ket{00} = -\frac34\hbar^2\ket{00}\\
+ \intertext{%
+  Eigenwert: $-(3/4)\hbar^2$}
+\end{align*}
+
+\subsection{}
+$P$ ist hermitisch, da die Spinoperatoren $S_1$ und $S_2$ hermitisch sind und miteinander vertauschen. Ferner gilt:
+\begin{align*}
+ P\ket{1m_S} &= \del{\frac34 - \frac14} \ket{1m_S} = \ket{1m_S}\\
+ P\ket{00} &= \del{\frac34 - \frac34}\ket{00} = 0\\
+ \implies &P^2\ket{Sm_S} = P\ket{Sm_S}
+\end{align*}
+$P$ projeziert auf den Unterraum der Triplettzustände $\ket{1m_S}$.
 
 \section{Gesamtdrehimpuls des Elektrons}
 
