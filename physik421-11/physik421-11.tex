@@ -14,11 +14,54 @@
 
 \section{Radialimpuls} % (fold)
 \label{sec:Radialimpuls}
-
+ 
 % section Radialimpuls (end)
 
 \section{Kugelflächenfunktion in kartesischen Koordinaten} % (fold)
 \label{sec:Kugelflächenfunktion in kartesischen Koordinaten}
+
+Gesucht ist $r^lY_{l\,m}$ in Kugel- und kartesischen Koordinaten für $l=0,1$ und $-l\leq m \leq +l$. Gegeben ist die allgemeine Form der Kugelflächenfunktionen
+\begin{align*}
+    Y_{l\,m}(\theta,\phi) &= \frac1{\sqrt{2\piup}} N_{l\,m} P_{l\,m}(\cos\theta)\eexp{\ii m\phi},
+    \intertext{mit}
+    N_{l\,m} &= \sqrt{\frac{\del{l+\half}\del{l-m}!}{\del{l+m}!}}
+    \intertext{und}
+    P_{l\,m}(x) &= \frac{(-1)^m}{2^ll!}\del{1-x^2}^{\frac m2} \dod[l+m]{}{x}\del{x^2-1}^l.
+    \intertext{%
+        Wir beginnen mit $l=0$ und $m=0$:
+    }
+    N_{0\,0} &= \sqrt{\half} \\
+    P_{0\,0} &= 1 \\
+    \implies\qquad r^0Y_{0\,0} &= \frac{1}{2\sqrt\piup}.
+    \intertext{%
+        Diese Funktion ist unabhängig von den Koordinaten.\newline
+        Nun schauen wir uns $l=1$ an und beginnen dabei mit $m=-1$:
+    }
+    N_{1\,-1} &= \sqrt{3} \\
+    P_{1\,-1}(x) &= -\half\frac{1}{\sqrt{1-x^2}}\del{x^2-1} \\
+    P_{1\,-1}(\cos\theta) &= -\half\frac1{\sin\theta}\del{-\sin^2\theta} \\
+                          &= \half\sin\theta \\
+    \implies \qquad rY_{1\,-1} &= \sqrt{\frac{3}{8\piup}} r \sin\theta\eexp{-\ii\phi} \\
+                               &= \sqrt{\frac{3}{8\piup}} \del{r \sin\theta\cos\phi - \ii\sin\theta\sin\phi} \\
+                               &= \sqrt{\frac{3}{8\piup}} \del{x-\ii y}.
+    \intertext{%
+        Nun $m=0$:
+    }
+    N_{1\,0} &= \sqrt{\frac32} \\
+    P_{1\,0}(x) &= \half \dod{}{x} \del{x^2-1} = x \\
+    P_{1\,0}(\cos\theta) &= \cos\theta \\
+    \implies \qquad rY_{1\,0} &= \sqrt{\frac3{4\piup}} r\cos\theta \\
+                              &= \sqrt{\frac3{4\piup}} z.
+    \intertext{%
+        Und zu guter letzt $m=1$:
+    }
+    N_{1\,1} &= \sqrt{\frac34} \\
+    P_{1\,1}(x) &= -\half \sqrt{1-x^2} \dpd[2]{}{x}\del{x^2-1} = -\sqrt{1-x^2} \\
+    P_{1\,1}(\cos\theta) &= -\sin\theta \\
+    \implies \qquad rY_{1\,1} &= - \sqrt{\frac3{8\piup}} r\sin\theta\eexp{\ii\phi} \\
+                              &= - \sqrt{\frac3{8\piup}} \del{r\sin\theta\cos\phi + \ii r\sin\theta\sin\phi} \\
+                              &= - \sqrt{\frac3{8\piup}} \del{x + \ii y}
+\end{align*}
 
 % section Kugelflächenfunktion in kartesischen Koordinaten (end)
 
