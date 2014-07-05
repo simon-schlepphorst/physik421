@@ -73,6 +73,71 @@ Gesucht ist $r^lY_{l\,m}$ in Kugel- und kartesischen Koordinaten für $l=0,1$ un
 \section{Elektron im Wasserstoffatom} % (fold)
 \label{sec:Elektron im Wasserstoffatom}
 
+Gegeben ist die Wellenfunktion
+\begin{align*}
+    \Psi(r,\theta,\phi) &= Ar\dexp{-\frac{r}{2a_0}}Y_{1\,1}(\theta,\phi),
+    \intertext{%
+        mit
+    }
+    a_0 &= \frac{4\piup\epsilon_0\hbar^2}{m_ee^2}.
+    \intertext{%
+        Zu zeigen ist nun, dass diese Wellenfunktion eine Eigenfunktion des Hamiltonoperators
+    }
+    H &= -\frac{\hbar^2}{2m_e}\laplace - \frac{e^2}{4\piup\epsilon_0r}
+    \intertext{%
+        ist. Dafür benötigen wir zunächst den Laplace-Operator in Kugelkoordinaten:
+    }
+    \laplace\Psi &= \frac1{r^2} \dpd{}{r} \del{r^2\dpd{\Psi}{r}} + \frac1{r^2\sin\theta} \dpd{}{\theta} \del{\sin\theta \dpd\Psi\theta } + \frac1{r^2\sin^2\theta}\dpd[2]\Psi\phi.
+    \intertext{%
+        Um dies zu berechnen nehmen wir uns die einzelnen Komponenten vor. Wir beginnen mit dem Radialteil:
+    }
+    \frac1{r^2} \dpd{}{r} \del{r^2\dpd{\Psi}{r}} &= Y_{1\,1}\frac1{r^2}\dpd{}{r}\del{A\dexp{-\frac{r}{2a_0}}\del{ r^2 - \frac{r^3}{2a_0}}} \\
+                                                 &= Y_{1\,1}\frac1{r^2}\del{A\dexp{-\frac{r}{2a_0}}\del{-\frac{r^2}{2a_0} + \frac{r^3}{4a_0^2} + 2r - \frac{3r^2}{2a_0}}} \\
+                                                 &= Y_{1\,1}\dexp{-\frac{r}{2a_0}}\del{-\frac{2}{a_0} + \frac{r^3}{4a_0^2} + \frac2r} \\
+                                                 &= -\sqrt{\frac3{8\piup}}\sin\theta\eexp{\ii\phi} Y_{1\,1}\dexp{-\frac{r}{2a_0}}\del{-\frac{2}{a_0} + \frac{r^3}{4a_0^2} + \frac2r}. \label{eq:radial} \mantag
+    \intertext{%
+        Als Nächstes schauen wir uns den $\theta$-Teil an:
+    }
+    \frac1{r^2\sin\theta} \dpd{}{\theta} \del{\sin\theta \dpd\Psi\theta } &= \frac{A}{r\sin\theta}\dexp{-\frac r{2a_0}}\dpd{}{\theta}\del{\sin\dpd{Y_{1\,1}}{\theta}} \\
+    &= -\sqrt{\frac3{8\piup}}\eexp{\ii\phi} \frac{A}{r\sin\theta}\dexp{-\frac r{2a_0}}\dpd{}{\theta}\del{\sin\dpd{\sin\theta}{\theta}} \\
+                                                                          &= -\sqrt{\frac3{8\piup}}\eexp{\ii\phi} \frac{A}{r\sin\theta}\dexp{-\frac r{2a_0}}\dpd{}{\theta}\sin\theta\cos\theta \\
+                                                                          &= -\sqrt{\frac3{8\piup}}\eexp{\ii\phi} \frac{A}{r\sin\theta}\dexp{-\frac r{2a_0}}\del{\cos^2\theta-\sin^2\theta}. \label{eq:theta}\mantag
+    \intertext{%
+        Zum Schluss der $\phi$-Teil:
+    }
+    \frac1{r^2\sin^2\theta}\dpd[2]\Psi\phi &= \frac A{r\sin^2\theta}\dexp{-\frac r{2a_0}}\dpd[2]{Y_{1\,1}}{\phi} \\
+                                           &= -\sqrt{\frac3{8\piup}} \frac{A}{r\sin\theta}\dexp{-\frac r{2a_0}} \dpd[2]{\eexp{\ii\phi}}
+    {\phi} \\
+    &= \sqrt{\frac3{8\piup}} \frac{A}{r\sin\theta}\dexp{-\frac r{2a_0}} \eexp{\ii\phi}. \label{eq:phi}\mantag
+    \intertext{%
+        Mit \eqref{eq:radial}, \eqref{eq:theta} und \eqref{eq:phi} ergibt sich nun
+    }
+    \laplace\Psi &= -\sqrt{\frac3{8\piup}}\sin\theta\eexp{\ii\phi} Y_{1\,1}\dexp{-\frac{r}{2a_0}}\del{-\frac{2}{a_0} + \frac{r^3}{4a_0^2} + \frac2r} \\
+                 &\phantom{=} -\sqrt{\frac3{8\piup}}\eexp{\ii\phi} \frac{A}{r\sin\theta}\dexp{-\frac r{2a_0}}\del{\cos^2\theta-\sin^2\theta} \\
+                 &\phantom{=} -\sqrt{\frac3{8\piup}}\eexp{\ii\phi} \frac{A}{r\sin\theta}\dexp{-\frac r{2a_0}}\del{\cos^2\theta-\sin^2\theta}.
+    \intertext{%
+        Ein ersten Ausklammern führt uns auf
+    }
+    &= -\sqrt{\frac3{8\piup}} \eexp{\ii\phi} A\dexp{-\frac r{2a_0}} \del{-\frac{2\sin\theta}{a_0} + \frac{2\sin\theta}r + \frac{r\sin\theta}{4a_0^2} + \frac{\cos^2\theta}{r\sin\theta} - \frac{\sin\theta}r - \frac1{r\sin\theta}} \\
+    &= -\sqrt{\frac3{8\piup}} \eexp{\ii\phi} A\dexp{-\frac r{2a_0}} \del{ -\frac{2\sin\theta}{a_0} + \frac{r\sin\theta}{4a_0^2} + \frac{\sin\theta}r + \frac{\cos^2\theta - 1}{r\sin\theta}} \\
+    &= -\sqrt{\frac3{8\piup}} \eexp{\ii\phi} A\dexp{-\frac r{2a_0}} \del{ -\frac{2\sin\theta}{a_0} + \frac{r\sin\theta}{4a_0^2} + \cancel{\frac{\sin\theta}r} - \cancel{\frac{\sin^2\theta}{r\sin\theta}}} \\
+    &= -\sqrt{\frac3{8\piup}} \sin\theta \eexp{\ii\phi} A r\dexp{-\frac r{2a_0}} \del{\frac1{4a_0^2} - \frac2{a_0r}} \\
+    &= \del{\frac1{4a_0^2} - \frac2{a_0r}} \Psi.
+    \intertext{%
+        Nun können wir den Hamiltonoperator auf die Wellenfunktion anwenden:
+    }
+    H\Psi &= \del{-\frac{\hbar^2}{2m_e}\laplace - \frac{e^2}{4\piup\epsilon_0r}}\Psi \\
+          &= \del{-\frac{\hbar^2}{2m_e}\del{\frac1{4a_0^2} - \frac2{a_0r}} - \frac{e^2}{4\piup\epsilon_0r}}\Psi .
+    \intertext{%
+        Wir setzen $a_0$ ein und erhalten
+    }
+    &= \del{-\frac{\hbar^2}{2m_e}\frac{m_e^2e^4}{64\piup^2\epsilon_0^2\hbar^4} + \cancel{\frac{\hbar^2}{2m_e}\frac{2m_ee^2}{4\piup\epsilon_0\hbar^2r}} - \cancel{\frac{e^2}{4\piup\epsilon_0r}}}\Psi \\
+    &= -\frac{m_ee^4}{128\piup^2\epsilon_0^2\hbar^2}\Psi.
+\end{align*}
+$\Psi$ ist also eine Eigenfunktion vom Hamiltonoperator $H$, mit dem Energieeigenwert
+$-\frac{m_ee^4}{128\piup^2\epsilon_0^2\hbar^2}$. Dies kommt von den Einheiten her auch hin.
+
+Der Zustand des Elektrons ist offensichtlich durch die Quantenzahlen $l$ und $m$ gekennzeichnet.
 % section Elektron im Wasserstoffatom (end)
 
 \end{document}
